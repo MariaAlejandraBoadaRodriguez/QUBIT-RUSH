@@ -8,7 +8,8 @@ const BUDGETS := {
 	"preview_refresh_ms": 2.0,           # live preview after one edit
 	"load_all_levels_ms": 500.0,
 	"solve_all_levels_ms": 20000.0,
-	"object_growth_after_session": 200,  # leaked objects after 300 screen cycles
+	"object_growth_after_session": 200,  # leaked objects after 600 screen cycles
+	"static_memory_growth_kb_second_300": 1024.0,  # growth must flatten (caches warm)
 }
 
 
@@ -61,10 +62,15 @@ func _run() -> void:
 	var mem0 := Performance.get_monitor(Performance.MEMORY_STATIC)
 	for i in 300:
 		await _cycle(gs, puzzle, levels, i)
+	var mem1 := Performance.get_monitor(Performance.MEMORY_STATIC)
+	for i in 300:
+		await _cycle(gs, puzzle, levels, i)
 	for i in 5:
 		await process_frame
+	var mem2 := Performance.get_monitor(Performance.MEMORY_STATIC)
 	r["object_growth_after_session"] = Performance.get_monitor(Performance.OBJECT_COUNT) - base
-	r["static_memory_growth_kb"] = (Performance.get_monitor(Performance.MEMORY_STATIC) - mem0) / 1024.0
+	r["static_memory_growth_kb_first_300"] = (mem1 - mem0) / 1024.0
+	r["static_memory_growth_kb_second_300"] = (mem2 - mem1) / 1024.0
 	save.reset_progress()
 	var ok := true
 	var report := {"results": r, "budgets": BUDGETS, "failures": []}

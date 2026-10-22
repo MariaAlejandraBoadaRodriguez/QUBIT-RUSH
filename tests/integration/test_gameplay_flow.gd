@@ -7,7 +7,7 @@ const PATH := "user://test_flow_save.json"
 
 
 func before_each() -> void:
-	for f in [PATH, PATH + ".bak"]:
+	for f in [PATH, PATH + ".tmp", PATH + ".bak"]:
 		if FileAccess.file_exists(f):
 			DirAccess.remove_absolute(f)
 	SaveService.load_data(PATH)

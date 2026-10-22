@@ -8,8 +8,9 @@ var granted := []
 
 
 func before_each() -> void:
-	if FileAccess.file_exists(PATH):
-		DirAccess.remove_absolute(PATH)
+	for f in [PATH, PATH + ".tmp", PATH + ".bak"]:
+		if FileAccess.file_exists(f):
+			DirAccess.remove_absolute(f)
 	SaveService.load_data(PATH)
 	ConsentService.config = ConsentService.load_config()
 	AdsService.gameplay_active = false

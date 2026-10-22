@@ -10,8 +10,9 @@ const SIZES := [Vector2i(810, 1440), Vector2i(720, 1560), Vector2i(720, 1600), V
 
 
 func before_all() -> void:
-	if FileAccess.file_exists(PATH):
-		DirAccess.remove_absolute(PATH)
+	for f in [PATH, PATH + ".tmp", PATH + ".bak"]:
+		if FileAccess.file_exists(f):
+			DirAccess.remove_absolute(f)
 	SaveService.load_data(PATH)
 	SaveService.set_setting("reduced_motion", true)
 	GameState.capture_navigation = true
