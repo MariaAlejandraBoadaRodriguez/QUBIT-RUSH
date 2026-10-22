@@ -181,3 +181,38 @@ func test_progression_never_requires_ads() -> void:
 	AdsService.set_provider(AdsProvider.new())
 	for L in LevelLoader.load_all().levels:
 		assert_true(LevelValidator.evaluate(L, L.solution).success, "L%d without ads" % L.number)
+
+
+func test_release_override_applies_production_ids_only_when_given() -> void:
+	var path := "user://test_ads_release.json"
+	var f := FileAccess.open(path, FileAccess.WRITE)
+	f.store_string(JSON.stringify({"test_mode": false, "audience_policy": "child_safe",
+		"android": {"app_id": "ca-app-pub-1~2", "rewarded_unit": "ca-app-pub-1/3", "interstitial_unit": ""}}))
+	f.close()
+	var c := ConsentService.apply_override(ConsentService.load_config(), path)
+	assert_false(c.test_mode)
+	assert_eq(c.android.rewarded_unit, "ca-app-pub-1/3")
+	assert_eq(c.audience_policy, "child_safe")
+	assert_true(str(c.android.interstitial_unit).begins_with("ca-app-pub-3940256099942544"), "empty values keep defaults")
+	var bad := ConsentService.apply_override(ConsentService.load_config(), "user://missing.json")
+	assert_true(bad.test_mode, "missing override changes nothing")
+	DirAccess.remove_absolute(path)
+
+
+func test_rewarded_offer_appears_on_results_only_when_allowed() -> void:
+	_consent_and_init()
+	GameState.capture_navigation = true
+	GameState.mode = "learn"
+	var L: LevelData = GameState.levels[4]
+	GameState.last_result = LevelValidator.evaluate(L, [])
+	GameState.last_result["level"] = L
+	var r: Control = load(GameState.SCREENS["results"]).instantiate()
+	add_child_autofree(r)
+	await wait_physics_frames(2)
+	var offer := r.find_child("RewardedOffer", true, false)
+	assert_not_null(offer, "optional offer shown after a failed attempt when ads are allowed")
+	var run_btn := r.find_child("RunButton", true, false)
+	assert_null(run_btn, "offer never shares a screen with Run")
+	(r.find_child("WatchAdButton", true, false) as Button).pressed.emit()
+	assert_eq(AdsService.bonus_hints(L.id), 1)
+	GameState.capture_navigation = false

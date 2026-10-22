@@ -17,3 +17,5 @@ export_credentials.cfg
 android/plugins/**/build/
 android/plugins/**/.gradle/
 android/plugins/**/local.properties
+# Built Android plugin binaries (build with scripts/build-android-plugin.sh)
+addons/qubitrush_ads/bin/

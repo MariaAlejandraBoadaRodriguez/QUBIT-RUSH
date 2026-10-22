@@ -10,6 +10,9 @@ signal consent_changed
 signal dialog_state_changed(open: bool)
 
 const CONFIG_PATH := "res://data/config/ads_config.json"
+## Written by the export plugin only for release builds with owner-supplied
+## production AdMob IDs. Never present in source control.
+const RELEASE_OVERRIDE_PATH := "res://data/config/ads_release.json"
 
 var config := {}
 var dialog_open := false
@@ -17,6 +20,25 @@ var dialog_open := false
 
 func _ready() -> void:
 	config = load_config()
+	if FileAccess.file_exists(RELEASE_OVERRIDE_PATH):
+		config = apply_override(config, RELEASE_OVERRIDE_PATH)
+
+
+static func apply_override(base: Dictionary, path: String) -> Dictionary:
+	var json := JSON.new()
+	if json.parse(FileAccess.get_file_as_string(path)) != OK or typeof(json.data) != TYPE_DICTIONARY:
+		return base
+	var out := base.duplicate(true)
+	var o: Dictionary = json.data
+	if typeof(o.get("android", null)) == TYPE_DICTIONARY:
+		for k in o.android:
+			if str(o.android[k]) != "":
+				out.android[k] = str(o.android[k])
+	if o.has("test_mode"):
+		out.test_mode = bool(o.test_mode)
+	if o.get("audience_policy", "") == "general":
+		out.audience_policy = "general"
+	return out
 
 
 static func load_config(path := CONFIG_PATH) -> Dictionary:

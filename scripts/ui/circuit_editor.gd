@@ -77,7 +77,22 @@ func place_gate(gate: String, wire := -1, column := -1) -> bool:
 	ops.insert(at, op)
 	selected_index = -1
 	_commit()
+	_animate_insert(fixed_ops.size() + at)
 	return true
+
+
+## 300 ms ease-in of a newly placed gate (skipped with Reduce motion).
+func _animate_insert(col: int) -> void:
+	if bool(SaveService.get_setting("reduced_motion")) or not is_inside_tree():
+		return
+	for b in get_children():
+		if b is Button and (b.name == "Op_%d" % col or b.name.begins_with("Op_%d_" % col)):
+			b.pivot_offset = b.size / 2.0
+			b.scale = Vector2(0.7, 0.7)
+			b.modulate.a = 0.4
+			var tw := b.create_tween().set_parallel().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+			tw.tween_property(b, "scale", Vector2.ONE, 0.3)
+			tw.tween_property(b, "modulate:a", 1.0, 0.3)
 
 
 func remove_selected() -> bool:

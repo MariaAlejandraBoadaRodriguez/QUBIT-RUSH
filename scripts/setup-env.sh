@@ -8,7 +8,7 @@ GODOT_VERSION="${GODOT_VERSION:-4.7.2}"          # Pinned: latest 4.x stable as 
 GODOT_TAG="${GODOT_VERSION}-stable"
 ANDROID_CMDLINE_ZIP="commandlinetools-linux-13114758_latest.zip"
 ANDROID_API="${ANDROID_API:-36}"
-BUILD_TOOLS="${BUILD_TOOLS:-36.0.0}"
+BUILD_TOOLS="${BUILD_TOOLS:-36.1.0}"   # matches Godot 4.7.2 Gradle template (config.gradle)
 
 export ANDROID_HOME="${ANDROID_HOME:-$HOME/android-sdk}"
 export ANDROID_SDK_ROOT="$ANDROID_HOME"

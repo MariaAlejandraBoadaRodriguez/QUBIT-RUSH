@@ -53,8 +53,12 @@ func _allow() -> void:
 		go_back()
 
 
-func _on_consent_status(status: String, _can_request: bool) -> void:
-	ConsentService.set_ump_status(status)
+func _on_consent_status(status: String, can_request: bool) -> void:
+	# Only statuses under which the UMP SDK allows ad requests unlock ads.
+	if can_request:
+		ConsentService.set_ump_status("obtained" if status == "obtained" else "not_required")
+	else:
+		ConsentService.set_ump_status(status if status in ["required", "unknown", "error"] else "unknown")
 	if is_inside_tree():
 		go_back()
 

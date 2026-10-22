@@ -1,0 +1,50 @@
+plugins {
+    id "com.android.library"
+}
+
+// Pinned dependency versions (see docs/ADS_INTEGRATION.md for review notes).
+ext {
+    godotVersion = "4.7.2.stable"
+    playServicesAdsVersion = "25.5.0"
+    umpVersion = "4.0.0"
+}
+
+android {
+    namespace "com.qubitrush.ads"
+    compileSdk 36
+    defaultConfig {
+        minSdk 26
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    buildFeatures {
+        buildConfig false
+    }
+}
+
+// Compile against the godot-lib AAR shipped in the installed Godot Android
+// build template (scripts/install-android-template.sh) when present, so the
+// build works offline; otherwise fall back to Maven Central.
+def localGodotLib = rootProject.file("../../build/libs/release/godot-lib.template_release.aar")
+
+dependencies {
+    if (localGodotLib.exists()) {
+        compileOnly files(localGodotLib)
+    } else {
+        compileOnly "org.godotengine:godot:$godotVersion"
+    }
+    // Declared again by the Godot export plugin so the app pulls them in.
+    compileOnly "com.google.android.gms:play-services-ads:$playServicesAdsVersion"
+    compileOnly "com.google.android.ump:user-messaging-platform:$umpVersion"
+}
+
+// Copies the built AARs where the Godot export plugin expects them.
+tasks.register("copyAarToAddon", Copy) {
+    dependsOn "assembleDebug", "assembleRelease"
+    from(layout.buildDirectory.dir("outputs/aar"))
+    include "plugin-debug.aar", "plugin-release.aar"
+    rename "plugin-(.*)\\.aar", "qubitrush-ads-\$1.aar"
+    into rootProject.file("../../../addons/qubitrush_ads/bin")
+}
