@@ -86,6 +86,16 @@ static func label_to_index(label: String) -> int:
 	return idx
 
 
+## Basis indices ordered by their ket label ("00", "01", "10", "11"), which
+## is how states are listed to players.
+static func display_order(n: int) -> Array[int]:
+	var order: Array[int] = []
+	for i in 1 << n:
+		order.append(i)
+	order.sort_custom(func(a, b): return index_to_label(a, n) < index_to_label(b, n))
+	return order
+
+
 static func index_to_label(index: int, n: int) -> String:
 	var out := ""
 	for q in n:
@@ -233,7 +243,7 @@ func bloch_vector(q: int) -> Vector3:
 ## Human-readable ket expansion, e.g. "0.707|00⟩ + 0.707|11⟩".
 func to_ket_string(digits := 3) -> String:
 	var parts: Array[String] = []
-	for i in dim():
+	for i in display_order(num_qubits):
 		var re := amps[i * 2]
 		var im := amps[i * 2 + 1]
 		if CMath.abs2(re, im) < 1e-8:

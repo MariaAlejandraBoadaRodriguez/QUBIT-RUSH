@@ -245,6 +245,12 @@ func test_circuit_validation_and_run() -> void:
 	assert_almost_eq(start.amp_re(0), 1.0, TOL, "run does not mutate input")
 
 
+func test_display_order_is_reading_order() -> void:
+	assert_eq(StateVector.display_order(2), [0, 2, 1, 3] as Array[int], "|00>, |01>, |10>, |11>")
+	var s := StateVector.from_kets(2, {"10": 1.0, "01": 1.0})
+	assert_eq(s.to_ket_string(), "0.707|01⟩ + 0.707|10⟩")
+
+
 func test_complex_format() -> void:
 	assert_eq(CMath.format(0.70710678, 0.0), "0.707")
 	assert_eq(CMath.format(0.0, -1.0), "−1i")

@@ -1,0 +1,9 @@
+import	0	4	/root/tools/godot --headless --path . --import
+compile_all	0	1	/root/tools/godot --headless --path . -s tests/compile_all.gd
+gut_tests	0	13	/root/tools/godot --headless --path . -s addons/gut/gut_cmdln.gd -gexit
+level_solvability	0	1	/root/tools/godot --headless --path . -s tests/check_levels.gd
+performance	0	12	/root/tools/godot --headless --path . -s tests/perf_check.gd
+android_template	0	0	bash scripts/install-android-template.sh
+android_plugin	0	10	bash scripts/build-android-plugin.sh
+export_debug_apk	0	16	/root/tools/godot --headless --path . --export-debug Android build/qubit-rush-debug.apk
+validate_aab	0	38	bash scripts/build-release-aab.sh --validate

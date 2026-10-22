@@ -41,4 +41,4 @@ func _draw() -> void:
 	var tip := _project(vec, c, r)
 	draw_line(c, tip, AppTheme.PRIMARY, 5.0, true)
 	draw_circle(tip, 9.0, AppTheme.PRIMARY)
-	draw_string(font, Vector2(0, size.y - 4), "q%d" % qubit, HORIZONTAL_ALIGNMENT_CENTER, size.x, fs, AppTheme.TEXT_2)
+	draw_string(font, Vector2(4, fs + 4), "q%d" % qubit, HORIZONTAL_ALIGNMENT_LEFT, -1, fs, AppTheme.TEXT_2)

@@ -1,0 +1,191 @@
+{
+  "generated_utc": "2026-10-22T03:24:44+00:00",
+  "environment": {
+    "os": "Linux-6.18.44-fc-v140-x86_64-with-glibc2.39",
+    "godot": "4.7.2.stable.official.ed1daf0bf",
+    "java": "openjdk version \"17.0.20.1\" 2026-08-18",
+    "android_build_tools": [
+      "34.0.0",
+      "36.0.0",
+      "36.1.0"
+    ],
+    "android_platforms": [
+      "android-36"
+    ],
+    "emulator_available": false,
+    "plugins": {
+      "GUT": "9.7.1",
+      "play-services-ads": "25.5.0",
+      "user-messaging-platform": "4.0.0"
+    }
+  },
+  "commands": [
+    {
+      "name": "import",
+      "command": "/root/tools/godot --headless --path . --import",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "reports/logs/import.log",
+      "script_errors_in_log": false
+    },
+    {
+      "name": "compile_all",
+      "command": "/root/tools/godot --headless --path . -s tests/compile_all.gd",
+      "exit_code": 0,
+      "seconds": 1,
+      "log": "reports/logs/compile_all.log",
+      "script_errors_in_log": false
+    },
+    {
+      "name": "gut_tests",
+      "command": "/root/tools/godot --headless --path . -s addons/gut/gut_cmdln.gd -gexit",
+      "exit_code": 0,
+      "seconds": 13,
+      "log": "reports/logs/gut_tests.log",
+      "script_errors_in_log": false
+    },
+    {
+      "name": "level_solvability",
+      "command": "/root/tools/godot --headless --path . -s tests/check_levels.gd",
+      "exit_code": 0,
+      "seconds": 1,
+      "log": "reports/logs/level_solvability.log",
+      "script_errors_in_log": false
+    },
+    {
+      "name": "performance",
+      "command": "/root/tools/godot --headless --path . -s tests/perf_check.gd",
+      "exit_code": 0,
+      "seconds": 12,
+      "log": "reports/logs/performance.log",
+      "script_errors_in_log": false
+    },
+    {
+      "name": "android_template",
+      "command": "bash scripts/install-android-template.sh",
+      "exit_code": 0,
+      "seconds": 0,
+      "log": "reports/logs/android_template.log",
+      "script_errors_in_log": false
+    },
+    {
+      "name": "android_plugin",
+      "command": "bash scripts/build-android-plugin.sh",
+      "exit_code": 0,
+      "seconds": 10,
+      "log": "reports/logs/android_plugin.log",
+      "script_errors_in_log": false
+    },
+    {
+      "name": "export_debug_apk",
+      "command": "/root/tools/godot --headless --path . --export-debug Android build/qubit-rush-debug.apk",
+      "exit_code": 0,
+      "seconds": 16,
+      "log": "reports/logs/export_debug_apk.log",
+      "script_errors_in_log": false
+    },
+    {
+      "name": "validate_aab",
+      "command": "bash scripts/build-release-aab.sh --validate",
+      "exit_code": 0,
+      "seconds": 38,
+      "log": "reports/logs/validate_aab.log",
+      "script_errors_in_log": false
+    }
+  ],
+  "gut": {
+    "suites": [
+      {
+        "suite": "tests/unit/test_levels.gd",
+        "tests": 18,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "tests/unit/test_quantum_core.gd",
+        "tests": 26,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "tests/unit/test_save_service.gd",
+        "tests": 12,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "tests/integration/test_ads_policy.gd",
+        "tests": 19,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "tests/integration/test_gameplay_flow.gd",
+        "tests": 15,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "tests/ui/test_layout.gd",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ],
+    "totals": {
+      "tests": 94,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "asserts": {
+      "passed": 4630,
+      "total": 4630
+    }
+  },
+  "levels": {
+    "ok": true,
+    "count": 40,
+    "passed": 40
+  },
+  "performance": {
+    "budgets": {
+      "load_all_levels_ms": 500.0,
+      "object_growth_after_session": 200,
+      "preview_refresh_ms": 2.0,
+      "simulate_3q_20_gates_ms": 2.0,
+      "solve_all_levels_ms": 20000.0,
+      "static_memory_growth_kb_second_300": 1024.0
+    },
+    "failures": [],
+    "ok": true,
+    "results": {
+      "load_all_levels_ms": 5.662,
+      "object_growth_after_session": 12.0,
+      "preview_refresh_ms": 0.052002,
+      "simulate_3q_20_gates_ms": 0.183245,
+      "solve_all_levels_ms": 30.333,
+      "static_memory_growth_kb_first_300": 1883.359375,
+      "static_memory_growth_kb_second_300": 957.77734375
+    }
+  },
+  "artifacts": [
+    {
+      "path": "build/qubit-rush-debug.apk",
+      "bytes": 251823278,
+      "sha256": "c4d417ba4e606dd10a439132e65402a6df66919d5d1feb5984ecccfd15b77da0"
+    },
+    {
+      "path": "build/qubit-rush-validation.aab",
+      "bytes": 53228128,
+      "sha256": "9c613a5d5ccb18d462e2c755a71c672ed12d4f9a38f3d7a91f0a6d4589f3e768"
+    }
+  ],
+  "all_executed_checks_passed": true
+}

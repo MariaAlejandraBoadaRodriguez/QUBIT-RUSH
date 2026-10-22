@@ -36,7 +36,7 @@ func set_targets(t: PackedFloat64Array) -> void:
 
 func summary() -> String:
 	var parts: Array[String] = []
-	for i in values.size():
+	for i in StateVector.display_order(num_qubits):
 		parts.append("|%s⟩ %d%%" % [StateVector.index_to_label(i, num_qubits), roundi(values[i] * 100.0)])
 	return ", ".join(parts)
 
@@ -66,8 +66,10 @@ func _draw() -> void:
 	var fs := AppTheme.size(14)
 	var row := ROW_H * AppTheme.text_scale()
 	var bar_w := maxf(size.x - LABEL_W - PCT_W, 40.0)
-	for i in shown.size():
-		var y := i * row
+	var order := StateVector.display_order(num_qubits)
+	for row_i in mini(order.size(), shown.size()):
+		var i: int = order[row_i]
+		var y := row_i * row
 		var label := "|%s⟩" % StateVector.index_to_label(i, num_qubits)
 		draw_string(font, Vector2(0, y + row * 0.68), label, HORIZONTAL_ALIGNMENT_LEFT, LABEL_W, fs, AppTheme.TEXT)
 		var r := Rect2(LABEL_W, y + row * 0.2, bar_w, row * 0.6)

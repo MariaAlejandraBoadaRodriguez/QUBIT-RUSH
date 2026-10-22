@@ -47,7 +47,7 @@ func target_description() -> String:
 	if target_state != null:
 		return target_state.to_ket_string(3)
 	var parts: Array[String] = []
-	for i in target_probs.size():
+	for i in StateVector.display_order(num_qubits):
 		if target_probs[i] > 1e-9:
 			parts.append("P(%s) = %s" % [StateVector.index_to_label(i, num_qubits), String.num(target_probs[i], 3)])
 	return ", ".join(parts)

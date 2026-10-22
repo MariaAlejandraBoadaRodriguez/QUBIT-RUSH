@@ -1,0 +1,471 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+---  GUT  ---
+[1m[INFO]:  [0musing [/root/.local/share/godot/app_userdata/Qubit Rush] for temporary output.
+Godot version:  4.7.2
+GUT version:  9.7.1
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+[4m
+
+res://tests/unit/test_levels.gd
+[0m* test_all_levels_load_without_errors
+* test_level_audit_passes_for_every_level
+* test_curriculum_chapter_ranges
+* test_every_level_has_tutorial_text_and_free_hint
+* test_valid_level_parses
+* test_malformed_json_fails_safely
+* test_invalid_fields_are_rejected
+* test_validator_success_and_stars
+* test_validator_rejects_invalid_circuits
+* test_relative_phase_matters_for_state_goals
+* test_distribution_goal_accepts_any_phase
+* test_gate_efficiency_requires_budget
+* test_scoring_thresholds
+* test_impossible_target_reports_unsolvable
+* test_fixed_gates_are_applied_first
+* test_daily_challenge_is_deterministic_and_solvable
+* test_utc_date_string
+* test_rush_generation_many_seeds
+[1m18/18 passed.
+[0m[4m
+
+res://tests/unit/test_quantum_core.gd
+[0m* test_initial_state_is_all_zero
+* test_x_on_zero_gives_one
+* test_x_squared_is_identity
+* test_h_on_zero_gives_plus
+* test_h_squared_is_identity
+* test_z_plus_is_minus
+* test_hzh_zero_is_one
+* test_bell_state_with_documented_ordering
+* test_wire_ordering_labels
+* test_cnot_only_flips_when_control_is_one
+* test_three_qubit_cnot_targets
+* test_s_phase
+* test_t_phase
+* test_y_has_imaginary_amplitudes
+* test_norm_preserved_for_random_sequences
+* test_fidelity_ignores_global_phase
+* test_fidelity_detects_relative_phase
+* test_seeded_measurement_converges
+* test_measurement_distribution_bell
+* test_measurement_collapses_copy_only
+* test_measure_one_qubit_of_bell_pair_collapses_partner
+* test_bloch_vectors
+* test_invalid_operations_fail_safely
+* test_circuit_validation_and_run
+* test_display_order_is_reading_order
+* test_complex_format
+[1m26/26 passed.
+[0m[4m
+
+res://tests/unit/test_save_service.gd
+[0m* test_fresh_install_has_defaults
+* test_save_and_reload_preserves_progress
+* test_best_result_is_kept
+* test_corrupt_save_recovers_from_backup
+* test_corrupt_save_without_backup_uses_defaults
+* test_wrong_types_are_repaired
+* test_future_version_is_not_trusted
+* test_v1_migration
+* test_atomic_write_leaves_no_temp_file
+* test_reset_keeps_settings
+* test_corrupt_in_progress_circuit_is_ignored
+* test_save_contains_no_personal_fields
+[1m12/12 passed.
+[0m[4m
+
+res://tests/integration/test_ads_policy.gd
+[0m* test_shipped_config_is_child_safe_with_test_ids
+* test_malformed_config_falls_back_to_safe_defaults
+* test_no_ads_without_opt_in
+* test_declined_consent_blocks_ads
+* test_ump_required_but_not_obtained_blocks_ads
+* test_rewarded_flow_grants_once
+* test_duplicate_reward_callbacks_grant_once
+* test_replayed_reward_id_is_not_granted_again
+* test_no_reward_when_dismissed_early
+* test_reward_callback_without_active_show_is_ignored
+* test_no_fill_and_errors_degrade_gracefully
+* test_init_failure_means_unavailable
+* test_no_ads_during_gameplay
+* test_interstitials_disabled_under_child_safe_policy
+* test_interstitial_caps_for_general_audience
+* test_revoking_consent_stops_offers
+* test_progression_never_requires_ads
+* test_release_override_applies_production_ids_only_when_given
+* test_rewarded_offer_appears_on_results_only_when_allowed
+[1m19/19 passed.
+[0m[4m
+
+res://tests/integration/test_gameplay_flow.gd
+[0m* test_new_user_starts_offline_without_account_or_ads
+QRUI|home|PlayButton|32|33
+* test_level_one_tap_x_then_run
+QRUI|results|Gate_X|4|40
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|NextButton|32|40
+QRUI|results|RetryButton|32|45
+* test_wrong_answer_shows_retry_not_progress
+QRUI|puzzle|Gate_X|4|40
+QRUI|puzzle|RunButton|39|60
+QRUI|puzzle|BackButton|4|4
+QRUI|results|RetryButton|32|40
+* test_undo_reset_and_editing
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+[33m    60 Orphans[0m
+[33m        * [Slot_2_0:<Button#611378530007>]
+        * [Slot_0_0:<Button#611898623709>]
+        * [Slot_3_0:<Button#611462416094>]
+        * [Slot_1_0:<Button#611982509796>]
+        * [Op_0:<Button#611210757862>]
+        * [Slot_1_0:<Button#611294643945>]
+        * [Wire_0:<Button#611160426219>]
+        * [Op_0:<Button#612586489583>]
+        * [Slot_3_0:<Button#612150281970>]
+        * [Wire_0:<Button#611848292528>]
+        * [Slot_3_0:<Button#612838148277>]
+        * [Op_0:<Button#613274355897>]
+        * [Slot_2_0:<Button#612066396348>]
+        * [Op_1:<Button#607670765863>]
+        * [Op_0:<Button#606915791176>]
+        * [Slot_2_0:<Button#607083563356>]
+        * [Op_0:<Button#607586879848>]
+        * [Slot_3_0:<Button#607167449491>]
+        * [Slot_2_0:<Button#607754652056>]
+        * [Slot_3_0:<Button#607838538139>]
+        * [Op_0:<Button#608257968544>]
+        * [Wire_0:<Button#608207636899>]
+        * [Op_1:<Button#608341854635>]
+        * [Slot_1_0:<Button#606999677364>]
+        * [Wire_0:<Button#607536548313>]
+        * [Wire_0:<Button#606865459677>]
+        * [Wire_0:<Button#606043376206>]
+        * [Slot_0_0:<Button#606093707858>]
+        * [Slot_1_0:<Button#606177593943>]
+        * [Slot_2_0:<Button#606261480025>]
+        * [Op_1:<Button#610304789089>]
+        * [Slot_2_0:<Button#610388675172>]
+        * [Op_2:<Button#614113217134>]
+        * [Slot_3_0:<Button#610472561263>]
+        * [Wire_0:<Button#613895113333>]
+        * [Op_1:<Button#614029331062>]
+        * [Op_0:<Button#613945444984>]
+        * [Slot_3_0:<Button#614197103281>]
+        * [Op_0:<Button#610220903097>]
+        * [Wire_0:<Button#610170571450>]
+        * [Op_1:<Button#609717586624>]
+        * [Wire_0:<Button#609583368901>]
+        * [Op_0:<Button#609633700551>]
+        * [Slot_3_0:<Button#609197492940>]
+        * [Slot_2_0:<Button#609113606867>]
+        * [Op_1:<Button#609029720791>]
+        * [Wire_0:<Button#608895503066>]
+        * [Op_0:<Button#608945834720>]
+        * [Slot_3_0:<Button#608509627109>]
+        * [Slot_3_0:<Button#613526014710>]
+        * [Slot_2_0:<Button#613442128634>]
+        * [Slot_2_0:<Button#612754262782>]
+        * [Op_1:<Button#613358242559>]
+        * [Wire_0:<Button#612536158983>]
+        * [Slot_1_0:<Button#612670376718>]
+        * [Wire_0:<Button#613224024854>]
+        * [Op_2:<Button#608425741089>]
+        * [Slot_3_0:<Button#606345366308>]
+        * [Slot_2_0:<Button#609801472807>]
+        * [Slot_3_0:<Button#609885358889>][0m
+* test_drop_onto_slot_inserts_gate
+QRUI|results|Gate_X|4|45
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+* test_cnot_editing_controls
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+* test_in_progress_circuit_survives_restart
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+* test_rush_timer_pauses_in_background
+QRUI|results|Gate_X|4|33
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+* test_rush_solve_advances_and_timeout_ends
+QRUI|results|Gate_X|4|33
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+* test_daily_challenge_records_completion
+QRUI|puzzle|Gate_X|4|33
+QRUI|puzzle|RunButton|39|60
+QRUI|puzzle|BackButton|4|4
+* test_locked_levels_cannot_be_started_from_list
+QRUI|results|BackButton|4|4
+* test_all_levels_playable_through_ui_in_order
+QRUI|results|Gate_X|4|40
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|4|40
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|4|40
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|4|40
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|4|40
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|4|42
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|4|38
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|4|33
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|10|40
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|10|38
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|10|38
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|10|38
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|10|33
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|10|38
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|10|38
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|10|33
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|4|45
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|4|39
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|10|39
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|4|39
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|18|39
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|10|39
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|Gate_X|10|39
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+* test_back_navigation
+QRUI|results|Gate_X|4|40
+QRUI|results|RunButton|39|60
+QRUI|results|BackButton|4|4
+QRUI|levels|BackButton|4|4
+* test_hints_are_free
+QRUI|home|Gate_X|10|33
+QRUI|home|RunButton|39|60
+QRUI|home|BackButton|4|4
+* test_practice_lab_measurement_does_not_change_state
+QRUI|home|Gate_X|4|24
+QRUI|home|BackButton|4|4
+[33m    11 Orphans[0m
+[33m        * [Slot_4_0:<Button#795240040673>]
+        * [Slot_1_0:<Button#794988382465>]
+        * [Slot_6_0:<Button#795407812961>]
+        * [Slot_8_0:<Button#795575585204>]
+        * [Slot_3_0:<Button#795156154899>]
+        * [Slot_2_0:<Button#795072268843>]
+        * [Slot_5_0:<Button#795323927206>]
+        * [Slot_0_0:<Button#794904496854>]
+        * [Slot_7_0:<Button#795491699415>]
+        * [Slot_9_0:<Button#795659471646>]
+        * [Wire_0:<Button#794854165281>][0m
+[33m11 orphans[0m
+[1m15/15 passed.
+[0m[4m
+
+res://tests/ui/test_layout.gd
+[0m* test_screens_on_all_sizes
+QRUI|home|PlayButton|405|747
+QRUI|home|BackButton|97|80
+QRUI|home|BackButton|97|80
+QRUI|home|BackButton|97|80
+QRUI|home|BackButton|97|80
+QRUI|home|BackButton|97|80
+QRUI|home|Gate_X|87|535
+QRUI|home|BackButton|97|80
+QRUI|home|Gate_X|87|745
+QRUI|home|RunButton|558|1360
+QRUI|home|BackButton|97|80
+QRUI|home|RunButton|558|1360
+QRUI|home|BackButton|97|80
+QRUI|home|RunButton|558|1360
+QRUI|home|BackButton|97|80
+QRUI|home|RunButton|558|1360
+QRUI|home|BackButton|97|80
+QRUI|home|NextButton|405|935
+QRUI|home|RetryButton|405|1051
+QRUI|home|PlayButton|360|747
+QRUI|home|BackButton|97|80
+QRUI|home|BackButton|97|80
+QRUI|home|BackButton|97|80
+QRUI|home|BackButton|97|80
+QRUI|home|BackButton|97|80
+QRUI|home|Gate_X|87|535
+QRUI|home|BackButton|97|80
+QRUI|home|Gate_X|87|787
+QRUI|home|RunButton|513|1480
+QRUI|home|BackButton|97|80
+QRUI|home|RunButton|513|1480
+QRUI|home|BackButton|97|80
+QRUI|home|RunButton|513|1480
+QRUI|home|BackButton|97|80
+QRUI|home|RunButton|513|1480
+QRUI|home|BackButton|97|80
+QRUI|home|NextButton|360|1045
+QRUI|home|RetryButton|360|1161
+QRUI|home|PlayButton|360|747
+QRUI|home|BackButton|97|80
+QRUI|home|BackButton|97|80
+QRUI|home|BackButton|97|80
+QRUI|home|BackButton|97|80
+QRUI|home|BackButton|97|80
+QRUI|home|Gate_X|87|535
+QRUI|home|BackButton|97|80
+QRUI|home|Gate_X|87|787
+QRUI|home|RunButton|513|1520
+QRUI|home|BackButton|97|80
+QRUI|home|RunButton|513|1520
+QRUI|home|BackButton|97|80
+QRUI|home|RunButton|513|1520
+QRUI|home|BackButton|97|80
+QRUI|home|RunButton|513|1520
+QRUI|home|BackButton|97|80
+QRUI|home|NextButton|360|1045
+QRUI|home|RetryButton|360|1161
+QRUI|home|PlayButton|450|747
+QRUI|home|BackButton|97|80
+QRUI|home|BackButton|97|80
+QRUI|home|BackButton|97|80
+QRUI|home|BackButton|97|80
+QRUI|home|BackButton|97|80
+QRUI|home|Gate_X|87|535
+QRUI|home|BackButton|97|80
+QRUI|home|Gate_X|87|745
+QRUI|home|RunButton|603|1360
+QRUI|home|BackButton|97|80
+QRUI|home|RunButton|603|1360
+QRUI|home|BackButton|97|80
+QRUI|home|RunButton|603|1360
+QRUI|home|BackButton|97|80
+QRUI|home|RunButton|603|1360
+QRUI|home|BackButton|97|80
+QRUI|home|NextButton|450|893
+QRUI|home|RetryButton|450|1009
+QRUI|home|PlayButton|360|747
+QRUI|home|BackButton|97|80
+QRUI|home|BackButton|97|80
+QRUI|home|BackButton|97|80
+QRUI|home|BackButton|97|80
+QRUI|home|BackButton|97|80
+QRUI|home|Gate_X|87|535
+QRUI|home|BackButton|97|80
+QRUI|home|Gate_X|87|787
+QRUI|home|RunButton|513|1360
+QRUI|home|BackButton|97|80
+QRUI|home|RunButton|513|1360
+QRUI|home|BackButton|97|80
+QRUI|home|RunButton|513|1360
+QRUI|home|BackButton|97|80
+QRUI|home|RunButton|513|1360
+QRUI|home|BackButton|97|80
+QRUI|home|NextButton|360|1045
+QRUI|home|RetryButton|360|1161
+* test_large_text_layouts
+QRUI|home|PlayButton|360|822
+QRUI|home|BackButton|106|80
+QRUI|home|BackButton|106|80
+QRUI|home|BackButton|106|80
+QRUI|home|RunButton|529|1360
+QRUI|home|BackButton|106|80
+* test_controls_have_accessible_text
+QRUI|home|RunButton|513|1480
+QRUI|home|BackButton|97|80
+* test_gates_not_identified_by_colour_alone
+QRUI|home|RunButton|513|1480
+QRUI|home|BackButton|97|80
+[1m4/4 passed.
+[0m
+
+
+
+[33m==============================================
+[0m[33m= Run Summary
+[0m[33m==============================================
+[0m
+Totals
+------
+Scripts               6
+Tests                94
+Passing Tests        94
+Asserts            4630
+Time              11.41s
+
+
+[32m---- All tests passed! ----
+[0m
+Results saved to res://reports/junit.xml
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
