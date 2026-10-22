@@ -10,7 +10,7 @@ concurrency:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
       # The runner presets ANDROID_HOME to its own SDK; pin ours so setup,
@@ -93,7 +93,7 @@ jobs:
 
   emulator:
     needs: build-and-test
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     timeout-minutes: 45
     strategy:
       fail-fast: false
@@ -121,7 +121,7 @@ jobs:
           arch: x86_64
           profile: pixel_6
           disable-animations: true
-          emulator-options: -gpu swiftshader_indirect -no-window -no-audio -no-boot-anim -no-snapshot
+          emulator-options: -no-window -gpu swangle_indirect -no-snapshot -noaudio -no-boot-anim
           script: bash scripts/ci/emulator-smoke.sh artifact/build/qubit-rush-debug.apk emulator-api${{ matrix.api-level }}
 
       - name: Upload screenshots and logcat
