@@ -25,6 +25,9 @@ var last_result := {}
 var rush := {}
 var level_tab := "fundamentals"
 var current_screen := ""
+## When true (tests), goto() records the destination instead of switching scenes.
+var capture_navigation := false
+var navigation_log: Array[String] = []
 
 
 func _ready() -> void:
@@ -118,5 +121,8 @@ func goto(screen: String) -> void:
 		return
 	current_screen = screen
 	AdsService.gameplay_active = false
+	navigation_log.append(screen)
+	if capture_navigation:
+		return
 	get_tree().call_deferred("change_scene_to_file", path)
 	screen_changed.emit(path)

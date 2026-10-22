@@ -15,6 +15,7 @@ func build() -> void:
 		b.name = "Tab_" + t[0]
 		b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		b.add_theme_font_size_override("font_size", AppTheme.size(14))
+		b.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		b.pressed.connect(_select_tab.bind(t[0]))
 		tabs.add_child(b)
 		tab_buttons[t[0]] = b
@@ -27,7 +28,14 @@ func build() -> void:
 func _select_tab(tab: String) -> void:
 	GameState.level_tab = tab
 	for k in tab_buttons:
-		tab_buttons[k].theme_type_variation = "SelectedButton" if k == tab else ""
+		var b: Button = tab_buttons[k]
+		b.theme_type_variation = "SelectedButton" if k == tab else ""
+		for st in ["normal", "hover", "pressed"]:
+			b.remove_theme_stylebox_override(st)
+			var sb: StyleBoxFlat = b.get_theme_stylebox(st).duplicate()
+			sb.content_margin_left = 4 * AppTheme.DP
+			sb.content_margin_right = 4 * AppTheme.DP
+			b.add_theme_stylebox_override(st, sb)
 	for c in list.get_children():
 		c.queue_free()
 	for L in GameState.levels:

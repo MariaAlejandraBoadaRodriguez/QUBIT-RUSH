@@ -3,9 +3,14 @@ extends RefCounted
 ## Small factory helpers so screens stay declarative and consistent.
 
 
+## Keeps "|" glued to the ket that follows it so "|0⟩" never wraps mid-symbol.
+static func nobreak_kets(text: String) -> String:
+	return text.replace("|", "|\u2060")
+
+
 static func label(text: String, variation := "", wrap := true) -> Label:
 	var l := Label.new()
-	l.text = text
+	l.text = nobreak_kets(text) if wrap else text
 	if variation != "":
 		l.theme_type_variation = variation
 	if wrap:

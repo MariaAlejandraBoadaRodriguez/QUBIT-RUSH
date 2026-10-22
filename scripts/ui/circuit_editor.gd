@@ -7,11 +7,11 @@ extends Control
 signal ops_changed(ops: Array)
 signal selection_changed
 
-const COL_W := 112.0
-const WIRE_H := 124.0
+const COL_W := 120.0
+const WIRE_H := 128.0
 const LABEL_W := 150.0
 const PAD := 16.0
-const BTN := 92.0
+const BTN := 100.0
 
 var num_qubits := 1
 var start_label := "0"

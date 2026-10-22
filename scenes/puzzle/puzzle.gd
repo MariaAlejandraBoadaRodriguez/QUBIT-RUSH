@@ -16,7 +16,7 @@ var timer_label: Label
 var run_button: Button
 var undo_button: Button
 var reset_button: Button
-var action_row: HBoxContainer
+var action_row: HFlowContainer
 var objective_label: Label
 var target_label: Label
 var hint_label: Label
@@ -28,6 +28,8 @@ var timer_running := false
 var paused := false
 var running := false
 var preview_enabled := true
+var column: VBoxContainer
+var circuit_scroll: ScrollContainer
 
 
 func build() -> void:
@@ -43,29 +45,33 @@ func build() -> void:
 	timer_label = UI.label("", "HeadingLabel", false)
 	timer_label.name = "TimerLabel"
 	h.add_child(timer_label)
-	_build_tutorial()
+	column = scroll_column()
+	column.name = "PuzzleColumn"
 	_build_objective()
-	var sc := ScrollContainer.new()
-	sc.name = "CircuitScroll"
-	sc.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
-	sc.custom_minimum_size.y = CircuitEditor.PAD * 2 + CircuitEditor.WIRE_H * level.num_qubits + 24
-	content.add_child(sc)
+	circuit_scroll = ScrollContainer.new()
+	circuit_scroll.name = "CircuitScroll"
+	circuit_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	circuit_scroll.custom_minimum_size.y = CircuitEditor.PAD * 2 + CircuitEditor.WIRE_H * level.num_qubits + 24
+	column.add_child(circuit_scroll)
 	editor = CircuitEditor.new()
 	editor.name = "CircuitEditor"
-	sc.add_child(editor)
+	circuit_scroll.add_child(editor)
 	slots_label = UI.label("", "SecondaryLabel")
-	content.add_child(slots_label)
-	action_row = UI.hbox(8)
+	column.add_child(slots_label)
+	action_row = HFlowContainer.new()
+	action_row.add_theme_constant_override("h_separation", int(8 * AppTheme.DP))
+	action_row.add_theme_constant_override("v_separation", int(8 * AppTheme.DP))
 	action_row.name = "SelectionActions"
-	content.add_child(action_row)
+	column.add_child(action_row)
 	tray = HFlowContainer.new()
 	tray.name = "GateTray"
 	tray.add_theme_constant_override("h_separation", int(10 * AppTheme.DP))
 	tray.add_theme_constant_override("v_separation", int(10 * AppTheme.DP))
-	content.add_child(tray)
+	column.add_child(tray)
 	info = UI.label("", "SecondaryLabel")
 	info.name = "InfoLabel"
-	content.add_child(info)
+	column.add_child(info)
+	_build_preview()
 	var controls := UI.hbox(10)
 	undo_button = UI.button("Undo")
 	undo_button.name = "UndoButton"
@@ -81,7 +87,6 @@ func build() -> void:
 	controls.add_child(reset_button)
 	controls.add_child(run_button)
 	content.add_child(controls)
-	_build_preview()
 	editor.ops_changed.connect(_on_ops_changed)
 	editor.selection_changed.connect(_refresh_actions)
 	_load_level_into_editor()
@@ -105,7 +110,9 @@ func _title() -> String:
 			return "%d · %s" % [level.number, level.title]
 
 
-func _build_tutorial() -> void:
+## First visit only: one-sentence example and a simple action, shown inside
+## the objective card (no extra dismiss step).
+func _build_tutorial(v: VBoxContainer) -> void:
 	if GameState.mode != "learn" or SaveService.is_completed(level.id):
 		return
 	var tut: Dictionary = level.tutorial
@@ -113,18 +120,13 @@ func _build_tutorial() -> void:
 		return
 	tutorial_card = UI.card("PaleCard")
 	tutorial_card.name = "TutorialCard"
-	var v := UI.vbox(6)
-	tutorial_card.add_child(v)
+	var tv := UI.vbox(4)
+	tutorial_card.add_child(tv)
 	if tut.has("example"):
-		var ex := UI.label(str(tut.example), "HeadingLabel")
-		v.add_child(ex)
+		tv.add_child(UI.label(str(tut.example), "HeadingLabel"))
 	if tut.has("action"):
-		v.add_child(UI.label(str(tut.action)))
-	var ok := UI.button("Got it", "FlatButton")
-	ok.name = "TutorialDismiss"
-	ok.pressed.connect(func(): tutorial_card.visible = false)
-	v.add_child(ok)
-	content.add_child(tutorial_card)
+		tv.add_child(UI.label(str(tut.action)))
+	v.add_child(tutorial_card)
 
 
 func _build_objective() -> void:
@@ -135,6 +137,7 @@ func _build_objective() -> void:
 	objective_label = UI.label(str(level.tutorial.get("text", "")))
 	objective_label.name = "Objective"
 	v.add_child(objective_label)
+	_build_tutorial(v)
 	target_label = UI.label("", "HeadingLabel")
 	target_label.name = "Target"
 	v.add_child(target_label)
@@ -153,7 +156,7 @@ func _build_objective() -> void:
 		why.pressed.connect(func(): Sheet.open(self, "Why?", level.why))
 		row.add_child(why)
 	v.add_child(row)
-	content.add_child(card)
+	column.add_child(card)
 	_update_target_text()
 
 
@@ -171,7 +174,6 @@ func _update_target_text() -> void:
 func _build_preview() -> void:
 	var card := UI.card()
 	card.name = "PreviewCard"
-	card.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	var v := UI.vbox(6)
 	card.add_child(v)
 	var cap := UI.label("Preview: chance of each result when measured", "SecondaryLabel")
@@ -191,7 +193,7 @@ func _build_preview() -> void:
 	bloch.visible = preview_enabled
 	if not preview_enabled:
 		v.add_child(UI.label("Preview is hidden in this level. Run to see the result."))
-	content.add_child(card)
+	column.add_child(card)
 
 
 func _load_level_into_editor() -> void:
@@ -368,7 +370,7 @@ func _next_rush_challenge() -> void:
 	var h := content.get_child(0)
 	h.get_child(1).text = _title()
 	editor.custom_minimum_size = Vector2.ZERO
-	(content.get_node("CircuitScroll") as Control).custom_minimum_size.y = CircuitEditor.PAD * 2 + CircuitEditor.WIRE_H * level.num_qubits + 24
+	circuit_scroll.custom_minimum_size.y = CircuitEditor.PAD * 2 + CircuitEditor.WIRE_H * level.num_qubits + 24
 	_load_level_into_editor()
 
 

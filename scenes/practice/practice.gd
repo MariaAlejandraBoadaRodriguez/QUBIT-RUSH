@@ -10,6 +10,7 @@ var bloch: BlochView
 var counts_label: Label
 var tray: HFlowContainer
 var qbuttons := []
+var circuit_scroll: ScrollContainer
 
 
 func build() -> void:
@@ -24,18 +25,19 @@ func build() -> void:
 		qrow.add_child(b)
 		qbuttons.append(b)
 	content.add_child(qrow)
-	var sc := ScrollContainer.new()
-	sc.name = "CircuitScroll"
-	sc.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
-	content.add_child(sc)
+	var col := scroll_column()
+	circuit_scroll = ScrollContainer.new()
+	circuit_scroll.name = "CircuitScroll"
+	circuit_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	col.add_child(circuit_scroll)
 	editor = CircuitEditor.new()
 	editor.name = "CircuitEditor"
-	sc.add_child(editor)
+	circuit_scroll.add_child(editor)
 	editor.ops_changed.connect(func(_o): _refresh())
 	editor.selection_changed.connect(_refresh)
 	tray = HFlowContainer.new()
 	tray.add_theme_constant_override("h_separation", int(10 * AppTheme.DP))
-	content.add_child(tray)
+	col.add_child(tray)
 	var controls := UI.hbox(10)
 	for it in [["Undo", func(): editor.undo()], ["Remove", func(): editor.remove_selected()], ["Clear", func(): editor.reset()]]:
 		var b := UI.button(it[0])
@@ -43,9 +45,8 @@ func build() -> void:
 		b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		b.pressed.connect(it[1])
 		controls.add_child(b)
-	content.add_child(controls)
+	col.add_child(controls)
 	var card := UI.card()
-	card.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	var v := UI.vbox(6)
 	card.add_child(v)
 	ket = UI.label("", "HeadingLabel")
@@ -66,7 +67,7 @@ func build() -> void:
 	counts_label = UI.label("", "SecondaryLabel")
 	counts_label.name = "CountsLabel"
 	v.add_child(counts_label)
-	content.add_child(card)
+	col.add_child(card)
 	_set_qubits(1)
 
 
@@ -78,7 +79,7 @@ func _set_qubits(k: int) -> void:
 	for i in qbuttons.size():
 		qbuttons[i].theme_type_variation = "SelectedButton" if i + 1 == k else ""
 	editor.configure(k, "0".repeat(k), [], 10, gates)
-	(content.get_node("CircuitScroll") as Control).custom_minimum_size.y = CircuitEditor.PAD * 2 + CircuitEditor.WIRE_H * k + 24
+	circuit_scroll.custom_minimum_size.y = CircuitEditor.PAD * 2 + CircuitEditor.WIRE_H * k + 24
 	for c in tray.get_children():
 		c.queue_free()
 	for g in gates:

@@ -1,0 +1,8 @@
+Qubit Rush — credits and licences
+
+Engine: Godot Engine 4.7.2 (MIT licence), https://godotengine.org/license
+Typeface: Inter by Rasmus Andersson (SIL Open Font License 1.1)
+Ket symbols: subset of DejaVu Sans (Bitstream Vera / DejaVu licence, free to redistribute)
+Sound: all sound effects and music are original, synthesised in the app.
+Test framework (development only, not shipped): GUT 9.7.1 (MIT licence)
+Ads (only if you opt in): Google Mobile Ads SDK and User Messaging Platform, subject to Google's terms.

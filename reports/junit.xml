@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="GutTests" failures="0" tests="91" >
+  <testsuite name="tests/unit/test_levels.gd" tests="18" failures="0" skipped="0" time="0.430181" >
+      <testcase name="test_all_levels_load_without_errors" assertions="2" status="pass" classname="tests/unit/test_levels.gd" time="0.00593" >
+      </testcase>
+      <testcase name="test_level_audit_passes_for_every_level" assertions="41" status="pass" classname="tests/unit/test_levels.gd" time="0.044018" >
+      </testcase>
+      <testcase name="test_curriculum_chapter_ranges" assertions="44" status="pass" classname="tests/unit/test_levels.gd" time="0.007602" >
+      </testcase>
+      <testcase name="test_every_level_has_tutorial_text_and_free_hint" assertions="80" status="pass" classname="tests/unit/test_levels.gd" time="0.0069" >
+      </testcase>
+      <testcase name="test_valid_level_parses" assertions="3" status="pass" classname="tests/unit/test_levels.gd" time="0.000555" >
+      </testcase>
+      <testcase name="test_malformed_json_fails_safely" assertions="4" status="pass" classname="tests/unit/test_levels.gd" time="0.000192" >
+      </testcase>
+      <testcase name="test_invalid_fields_are_rejected" assertions="38" status="pass" classname="tests/unit/test_levels.gd" time="0.001164" >
+      </testcase>
+      <testcase name="test_validator_success_and_stars" assertions="4" status="pass" classname="tests/unit/test_levels.gd" time="0.000317" >
+      </testcase>
+      <testcase name="test_validator_rejects_invalid_circuits" assertions="3" status="pass" classname="tests/unit/test_levels.gd" time="0.000152" >
+      </testcase>
+      <testcase name="test_relative_phase_matters_for_state_goals" assertions="4" status="pass" classname="tests/unit/test_levels.gd" time="0.000255" >
+      </testcase>
+      <testcase name="test_distribution_goal_accepts_any_phase" assertions="2" status="pass" classname="tests/unit/test_levels.gd" time="0.000258" >
+      </testcase>
+      <testcase name="test_gate_efficiency_requires_budget" assertions="2" status="pass" classname="tests/unit/test_levels.gd" time="0.000204" >
+      </testcase>
+      <testcase name="test_scoring_thresholds" assertions="7" status="pass" classname="tests/unit/test_levels.gd" time="0.000201" >
+      </testcase>
+      <testcase name="test_impossible_target_reports_unsolvable" assertions="1" status="pass" classname="tests/unit/test_levels.gd" time="0.000231" >
+      </testcase>
+      <testcase name="test_fixed_gates_are_applied_first" assertions="2" status="pass" classname="tests/unit/test_levels.gd" time="0.000292" >
+      </testcase>
+      <testcase name="test_daily_challenge_is_deterministic_and_solvable" assertions="115" status="pass" classname="tests/unit/test_levels.gd" time="0.18634" >
+      </testcase>
+      <testcase name="test_utc_date_string" assertions="2" status="pass" classname="tests/unit/test_levels.gd" time="0.000331" >
+      </testcase>
+      <testcase name="test_rush_generation_many_seeds" assertions="25" status="pass" classname="tests/unit/test_levels.gd" time="0.175239" >
+      </testcase>
+  </testsuite>
+  <testsuite name="tests/unit/test_quantum_core.gd" tests="25" failures="0" skipped="0" time="0.118265" >
+      <testcase name="test_initial_state_is_all_zero" assertions="9" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.000274" >
+      </testcase>
+      <testcase name="test_x_on_zero_gives_one" assertions="6" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.000173" >
+      </testcase>
+      <testcase name="test_x_squared_is_identity" assertions="1" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.000076" >
+      </testcase>
+      <testcase name="test_h_on_zero_gives_plus" assertions="6" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.000146" >
+      </testcase>
+      <testcase name="test_h_squared_is_identity" assertions="1" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.000068" >
+      </testcase>
+      <testcase name="test_z_plus_is_minus" assertions="7" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.000211" >
+      </testcase>
+      <testcase name="test_hzh_zero_is_one" assertions="8" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.000169" >
+      </testcase>
+      <testcase name="test_bell_state_with_documented_ordering" assertions="13" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.000272" >
+      </testcase>
+      <testcase name="test_wire_ordering_labels" assertions="13" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.00027" >
+      </testcase>
+      <testcase name="test_cnot_only_flips_when_control_is_one" assertions="30" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.000482" >
+      </testcase>
+      <testcase name="test_three_qubit_cnot_targets" assertions="2" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.00013" >
+      </testcase>
+      <testcase name="test_s_phase" assertions="7" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.000165" >
+      </testcase>
+      <testcase name="test_t_phase" assertions="7" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.000241" >
+      </testcase>
+      <testcase name="test_y_has_imaginary_amplitudes" assertions="13" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.000338" >
+      </testcase>
+      <testcase name="test_norm_preserved_for_random_sequences" assertions="300" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.043803" >
+      </testcase>
+      <testcase name="test_fidelity_ignores_global_phase" assertions="4" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.000329" >
+      </testcase>
+      <testcase name="test_fidelity_detects_relative_phase" assertions="5" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.000152" >
+      </testcase>
+      <testcase name="test_seeded_measurement_converges" assertions="4" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.051762" >
+      </testcase>
+      <testcase name="test_measurement_distribution_bell" assertions="5" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.017149" >
+      </testcase>
+      <testcase name="test_measurement_collapses_copy_only" assertions="9" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.000621" >
+      </testcase>
+      <testcase name="test_measure_one_qubit_of_bell_pair_collapses_partner" assertions="22" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.000489" >
+      </testcase>
+      <testcase name="test_bloch_vectors" assertions="9" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.000242" >
+      </testcase>
+      <testcase name="test_invalid_operations_fail_safely" assertions="14" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.000215" >
+      </testcase>
+      <testcase name="test_circuit_validation_and_run" assertions="7" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.000246" >
+      </testcase>
+      <testcase name="test_complex_format" assertions="5" status="pass" classname="tests/unit/test_quantum_core.gd" time="0.000242" >
+      </testcase>
+  </testsuite>
+  <testsuite name="tests/unit/test_save_service.gd" tests="12" failures="0" skipped="0" time="0.084489" >
+      <testcase name="test_fresh_install_has_defaults" assertions="4" status="pass" classname="tests/unit/test_save_service.gd" time="0.000369" >
+      </testcase>
+      <testcase name="test_save_and_reload_preserves_progress" assertions="5" status="pass" classname="tests/unit/test_save_service.gd" time="0.002207" >
+      </testcase>
+      <testcase name="test_best_result_is_kept" assertions="4" status="pass" classname="tests/unit/test_save_service.gd" time="0.000765" >
+      </testcase>
+      <testcase name="test_corrupt_save_recovers_from_backup" assertions="2" status="pass" classname="tests/unit/test_save_service.gd" time="0.00094" >
+      </testcase>
+      <testcase name="test_corrupt_save_without_backup_uses_defaults" assertions="3" status="pass" classname="tests/unit/test_save_service.gd" time="0.001024" >
+      </testcase>
+      <testcase name="test_wrong_types_are_repaired" assertions="3" status="pass" classname="tests/unit/test_save_service.gd" time="0.000404" >
+      </testcase>
+      <testcase name="test_future_version_is_not_trusted" assertions="1" status="pass" classname="tests/unit/test_save_service.gd" time="0.000332" >
+      </testcase>
+      <testcase name="test_v1_migration" assertions="6" status="pass" classname="tests/unit/test_save_service.gd" time="0.000381" >
+      </testcase>
+      <testcase name="test_atomic_write_leaves_no_temp_file" assertions="2" status="pass" classname="tests/unit/test_save_service.gd" time="0.000425" >
+      </testcase>
+      <testcase name="test_reset_keeps_settings" assertions="2" status="pass" classname="tests/unit/test_save_service.gd" time="0.076659" >
+      </testcase>
+      <testcase name="test_corrupt_in_progress_circuit_is_ignored" assertions="2" status="pass" classname="tests/unit/test_save_service.gd" time="0.000752" >
+      </testcase>
+      <testcase name="test_save_contains_no_personal_fields" assertions="6" status="pass" classname="tests/unit/test_save_service.gd" time="0.000231" >
+      </testcase>
+  </testsuite>
+  <testsuite name="tests/integration/test_ads_policy.gd" tests="17" failures="0" skipped="0" time="0.026656" >
+      <testcase name="test_shipped_config_is_child_safe_with_test_ids" assertions="7" status="pass" classname="tests/integration/test_ads_policy.gd" time="0.000639" >
+      </testcase>
+      <testcase name="test_malformed_config_falls_back_to_safe_defaults" assertions="2" status="pass" classname="tests/integration/test_ads_policy.gd" time="0.000406" >
+      </testcase>
+      <testcase name="test_no_ads_without_opt_in" assertions="4" status="pass" classname="tests/integration/test_ads_policy.gd" time="0.000337" >
+      </testcase>
+      <testcase name="test_declined_consent_blocks_ads" assertions="1" status="pass" classname="tests/integration/test_ads_policy.gd" time="0.001395" >
+      </testcase>
+      <testcase name="test_ump_required_but_not_obtained_blocks_ads" assertions="2" status="pass" classname="tests/integration/test_ads_policy.gd" time="0.000948" >
+      </testcase>
+      <testcase name="test_rewarded_flow_grants_once" assertions="4" status="pass" classname="tests/integration/test_ads_policy.gd" time="0.001241" >
+      </testcase>
+      <testcase name="test_duplicate_reward_callbacks_grant_once" assertions="2" status="pass" classname="tests/integration/test_ads_policy.gd" time="0.001254" >
+      </testcase>
+      <testcase name="test_replayed_reward_id_is_not_granted_again" assertions="1" status="pass" classname="tests/integration/test_ads_policy.gd" time="0.001117" >
+      </testcase>
+      <testcase name="test_no_reward_when_dismissed_early" assertions="2" status="pass" classname="tests/integration/test_ads_policy.gd" time="0.000967" >
+      </testcase>
+      <testcase name="test_reward_callback_without_active_show_is_ignored" assertions="1" status="pass" classname="tests/integration/test_ads_policy.gd" time="0.000839" >
+      </testcase>
+      <testcase name="test_no_fill_and_errors_degrade_gracefully" assertions="6" status="pass" classname="tests/integration/test_ads_policy.gd" time="0.000942" >
+      </testcase>
+      <testcase name="test_init_failure_means_unavailable" assertions="1" status="pass" classname="tests/integration/test_ads_policy.gd" time="0.000772" >
+      </testcase>
+      <testcase name="test_no_ads_during_gameplay" assertions="4" status="pass" classname="tests/integration/test_ads_policy.gd" time="0.000793" >
+      </testcase>
+      <testcase name="test_interstitials_disabled_under_child_safe_policy" assertions="14" status="pass" classname="tests/integration/test_ads_policy.gd" time="0.004246" >
+      </testcase>
+      <testcase name="test_interstitial_caps_for_general_audience" assertions="4" status="pass" classname="tests/integration/test_ads_policy.gd" time="0.000922" >
+      </testcase>
+      <testcase name="test_revoking_consent_stops_offers" assertions="2" status="pass" classname="tests/integration/test_ads_policy.gd" time="0.001348" >
+      </testcase>
+      <testcase name="test_progression_never_requires_ads" assertions="40" status="pass" classname="tests/integration/test_ads_policy.gd" time="0.00849" >
+      </testcase>
+  </testsuite>
+  <testsuite name="tests/integration/test_gameplay_flow.gd" tests="15" failures="0" skipped="0" time="5.41581" >
+      <testcase name="test_new_user_starts_offline_without_account_or_ads" assertions="43" status="pass" classname="tests/integration/test_gameplay_flow.gd" time="0.04457" >
+      </testcase>
+      <testcase name="test_level_one_tap_x_then_run" assertions="11" status="pass" classname="tests/integration/test_gameplay_flow.gd" time="0.123378" >
+      </testcase>
+      <testcase name="test_wrong_answer_shows_retry_not_progress" assertions="5" status="pass" classname="tests/integration/test_gameplay_flow.gd" time="0.139847" >
+      </testcase>
+      <testcase name="test_undo_reset_and_editing" assertions="13" status="pass" classname="tests/integration/test_gameplay_flow.gd" time="0.073801" >
+      </testcase>
+      <testcase name="test_drop_onto_slot_inserts_gate" assertions="4" status="pass" classname="tests/integration/test_gameplay_flow.gd" time="0.045891" >
+      </testcase>
+      <testcase name="test_cnot_editing_controls" assertions="4" status="pass" classname="tests/integration/test_gameplay_flow.gd" time="0.094987" >
+      </testcase>
+      <testcase name="test_in_progress_circuit_survives_restart" assertions="1" status="pass" classname="tests/integration/test_gameplay_flow.gd" time="0.11731" >
+      </testcase>
+      <testcase name="test_rush_timer_pauses_in_background" assertions="5" status="pass" classname="tests/integration/test_gameplay_flow.gd" time="0.944598" >
+      </testcase>
+      <testcase name="test_rush_solve_advances_and_timeout_ends" assertions="5" status="pass" classname="tests/integration/test_gameplay_flow.gd" time="0.139016" >
+      </testcase>
+      <testcase name="test_daily_challenge_records_completion" assertions="1" status="pass" classname="tests/integration/test_gameplay_flow.gd" time="0.082563" >
+      </testcase>
+      <testcase name="test_locked_levels_cannot_be_started_from_list" assertions="2" status="pass" classname="tests/integration/test_gameplay_flow.gd" time="0.060252" >
+      </testcase>
+      <testcase name="test_all_levels_playable_through_ui_in_order" assertions="82" status="pass" classname="tests/integration/test_gameplay_flow.gd" time="3.327663" >
+      </testcase>
+      <testcase name="test_back_navigation" assertions="2" status="pass" classname="tests/integration/test_gameplay_flow.gd" time="0.108256" >
+      </testcase>
+      <testcase name="test_hints_are_free" assertions="2" status="pass" classname="tests/integration/test_gameplay_flow.gd" time="0.051808" >
+      </testcase>
+      <testcase name="test_practice_lab_measurement_does_not_change_state" assertions="3" status="pass" classname="tests/integration/test_gameplay_flow.gd" time="0.06187" >
+      </testcase>
+  </testsuite>
+  <testsuite name="tests/ui/test_layout.gd" tests="4" failures="0" skipped="0" time="4.677603" >
+      <testcase name="test_screens_on_all_sizes" assertions="3107" status="pass" classname="tests/ui/test_layout.gd" time="4.278763" >
+      </testcase>
+      <testcase name="test_large_text_layouts" assertions="288" status="pass" classname="tests/ui/test_layout.gd" time="0.271267" >
+      </testcase>
+      <testcase name="test_controls_have_accessible_text" assertions="16" status="pass" classname="tests/ui/test_layout.gd" time="0.057806" >
+      </testcase>
+      <testcase name="test_gates_not_identified_by_colour_alone" assertions="3" status="pass" classname="tests/ui/test_layout.gd" time="0.069767" >
+      </testcase>
+  </testsuite>
+</testsuites>
