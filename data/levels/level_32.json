@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "id": "L32",
+  "number": 32,
+  "chapter": "entanglement",
+  "title": "Minus partners",
+  "qubits": 2,
+  "start_state": "00",
+  "available_gates": [
+    "H",
+    "CNOT",
+    "Z"
+  ],
+  "max_slots": 4,
+  "fixed_gates": [],
+  "goal": {
+    "type": "bell_state",
+    "target": {
+      "bell": "phi_minus"
+    }
+  },
+  "scoring": {
+    "two_star_gates": 4,
+    "three_star_gates": 3
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Make (|00⟩ − |11⟩)/√2. The bars look like a normal Bell pair, so watch the phase."
+  },
+  "hints": [
+    "A Z on the control after H adds the minus sign."
+  ],
+  "why": "The minus sign is a relative phase between |00⟩ and |11⟩. The checker compares the full state, so the sign must be right.",
+  "success": "Entangled, with the right phase.",
+  "solution": [
+    {
+      "gate": "H",
+      "target": 0
+    },
+    {
+      "gate": "Z",
+      "target": 0
+    },
+    {
+      "gate": "CNOT",
+      "target": 1,
+      "control": 0
+    }
+  ]
+}

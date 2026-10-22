@@ -1,0 +1,637 @@
+{
+  "errors": [],
+  "levels": [
+    {
+      "id": "L01",
+      "number": 1,
+      "ok": true,
+      "optimal_length": 1,
+      "problems": [],
+      "reference_length": 1,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 2,
+      "solver_solution": [
+        "X on q0"
+      ],
+      "title": "Reach |1⟩"
+    },
+    {
+      "id": "L02",
+      "number": 2,
+      "ok": true,
+      "optimal_length": 1,
+      "problems": [],
+      "reference_length": 1,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 2,
+      "solver_solution": [
+        "X on q0"
+      ],
+      "title": "Flip back"
+    },
+    {
+      "id": "L03",
+      "number": 3,
+      "ok": true,
+      "optimal_length": 1,
+      "problems": [],
+      "reference_length": 1,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 2,
+      "solver_solution": [
+        "X on q0"
+      ],
+      "title": "Undo a flip"
+    },
+    {
+      "id": "L04",
+      "number": 4,
+      "ok": true,
+      "optimal_length": 1,
+      "problems": [],
+      "reference_length": 1,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 2,
+      "solver_solution": [
+        "X on q0"
+      ],
+      "title": "The identity"
+    },
+    {
+      "id": "L05",
+      "number": 5,
+      "ok": true,
+      "optimal_length": 1,
+      "problems": [],
+      "reference_length": 1,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 2,
+      "solver_solution": [
+        "X on q0"
+      ],
+      "title": "Count the flips"
+    },
+    {
+      "id": "L06",
+      "number": 6,
+      "ok": true,
+      "optimal_length": 1,
+      "problems": [],
+      "reference_length": 1,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 2,
+      "solver_solution": [
+        "X on q0"
+      ],
+      "title": "Always 1"
+    },
+    {
+      "id": "L07",
+      "number": 7,
+      "ok": true,
+      "optimal_length": 1,
+      "problems": [],
+      "reference_length": 1,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 2,
+      "solver_solution": [
+        "X on q0"
+      ],
+      "title": "Always 0"
+    },
+    {
+      "id": "L08",
+      "number": 8,
+      "ok": true,
+      "optimal_length": 1,
+      "problems": [],
+      "reference_length": 1,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 2,
+      "solver_solution": [
+        "X on q0"
+      ],
+      "title": "Gate budget"
+    },
+    {
+      "id": "L09",
+      "number": 9,
+      "ok": true,
+      "optimal_length": 1,
+      "problems": [],
+      "reference_length": 1,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 3,
+      "solver_solution": [
+        "H on q0"
+      ],
+      "title": "Two possibilities"
+    },
+    {
+      "id": "L10",
+      "number": 10,
+      "ok": true,
+      "optimal_length": 1,
+      "problems": [],
+      "reference_length": 1,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 3,
+      "solver_solution": [
+        "H on q0"
+      ],
+      "title": "Half and half"
+    },
+    {
+      "id": "L11",
+      "number": 11,
+      "ok": true,
+      "optimal_length": 1,
+      "problems": [],
+      "reference_length": 1,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 2,
+      "solver_solution": [
+        "H on q0"
+      ],
+      "title": "H undoes H"
+    },
+    {
+      "id": "L12",
+      "number": 12,
+      "ok": true,
+      "optimal_length": 1,
+      "problems": [],
+      "reference_length": 1,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 3,
+      "solver_solution": [
+        "H on q0"
+      ],
+      "title": "A negative amplitude"
+    },
+    {
+      "id": "L13",
+      "number": 13,
+      "ok": true,
+      "optimal_length": 2,
+      "problems": [],
+      "reference_length": 2,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 4,
+      "solver_solution": [
+        "X on q0",
+        "H on q0"
+      ],
+      "title": "Same odds, new state"
+    },
+    {
+      "id": "L14",
+      "number": 14,
+      "ok": true,
+      "optimal_length": 1,
+      "problems": [],
+      "reference_length": 1,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 3,
+      "solver_solution": [
+        "H on q0"
+      ],
+      "title": "Back from minus"
+    },
+    {
+      "id": "L15",
+      "number": 15,
+      "ok": true,
+      "optimal_length": 1,
+      "problems": [],
+      "reference_length": 1,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 3,
+      "solver_solution": [
+        "H on q0"
+      ],
+      "title": "Amplitude vs probability"
+    },
+    {
+      "id": "L16",
+      "number": 16,
+      "ok": true,
+      "optimal_length": 2,
+      "problems": [],
+      "reference_length": 2,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 5,
+      "solver_solution": [
+        "X on q0",
+        "H on q0"
+      ],
+      "title": "Plus from one"
+    },
+    {
+      "id": "L17",
+      "number": 17,
+      "ok": true,
+      "optimal_length": 1,
+      "problems": [],
+      "reference_length": 1,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 3,
+      "solver_solution": [
+        "Z on q0"
+      ],
+      "title": "Phase flip"
+    },
+    {
+      "id": "L18",
+      "number": 18,
+      "ok": true,
+      "optimal_length": 2,
+      "problems": [],
+      "reference_length": 2,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 3,
+      "solver_solution": [
+        "H on q0",
+        "Z on q0"
+      ],
+      "title": "Invisible change"
+    },
+    {
+      "id": "L19",
+      "number": 19,
+      "ok": true,
+      "optimal_length": 1,
+      "problems": [],
+      "reference_length": 1,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 3,
+      "solver_solution": [
+        "H on q0"
+      ],
+      "title": "Reveal the phase"
+    },
+    {
+      "id": "L20",
+      "number": 20,
+      "ok": true,
+      "optimal_length": 3,
+      "problems": [],
+      "reference_length": 3,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 4,
+      "solver_solution": [
+        "H on q0",
+        "Z on q0",
+        "H on q0"
+      ],
+      "title": "H–Z–H"
+    },
+    {
+      "id": "L21",
+      "number": 21,
+      "ok": true,
+      "optimal_length": 1,
+      "problems": [],
+      "reference_length": 1,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 3,
+      "solver_solution": [
+        "Z on q0"
+      ],
+      "title": "Cancel the phase"
+    },
+    {
+      "id": "L22",
+      "number": 22,
+      "ok": true,
+      "optimal_length": 2,
+      "problems": [],
+      "reference_length": 2,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 5,
+      "solver_solution": [
+        "S on q0",
+        "S on q0"
+      ],
+      "title": "Quarter turns"
+    },
+    {
+      "id": "L23",
+      "number": 23,
+      "ok": true,
+      "optimal_length": 4,
+      "problems": [],
+      "reference_length": 4,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 8,
+      "solver_solution": [
+        "H on q0",
+        "S on q0",
+        "S on q0",
+        "H on q0"
+      ],
+      "title": "Phase to bit"
+    },
+    {
+      "id": "L24",
+      "number": 24,
+      "ok": true,
+      "optimal_length": 2,
+      "problems": [],
+      "reference_length": 2,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 4,
+      "solver_solution": [
+        "H on q0",
+        "S on q0"
+      ],
+      "title": "Imaginary direction"
+    },
+    {
+      "id": "L25",
+      "number": 25,
+      "ok": true,
+      "optimal_length": 1,
+      "problems": [],
+      "reference_length": 1,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 3,
+      "solver_solution": [
+        "X on q1"
+      ],
+      "title": "A second wire"
+    },
+    {
+      "id": "L26",
+      "number": 26,
+      "ok": true,
+      "optimal_length": 2,
+      "problems": [],
+      "reference_length": 2,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 4,
+      "solver_solution": [
+        "X on q0",
+        "X on q1"
+      ],
+      "title": "Both flipped"
+    },
+    {
+      "id": "L27",
+      "number": 27,
+      "ok": true,
+      "optimal_length": 2,
+      "problems": [],
+      "reference_length": 2,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 11,
+      "solver_solution": [
+        "H on q0",
+        "H on q1"
+      ],
+      "title": "Four outcomes"
+    },
+    {
+      "id": "L28",
+      "number": 28,
+      "ok": true,
+      "optimal_length": 1,
+      "problems": [],
+      "reference_length": 1,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 2,
+      "solver_solution": [
+        "CNOT q0→q1"
+      ],
+      "title": "Controlled flip"
+    },
+    {
+      "id": "L29",
+      "number": 29,
+      "ok": true,
+      "optimal_length": 2,
+      "problems": [],
+      "reference_length": 2,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 4,
+      "solver_solution": [
+        "X on q0",
+        "X on q1"
+      ],
+      "title": "Copy the bit"
+    },
+    {
+      "id": "L30",
+      "number": 30,
+      "ok": true,
+      "optimal_length": 2,
+      "problems": [],
+      "reference_length": 2,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 5,
+      "solver_solution": [
+        "H on q0",
+        "CNOT q0→q1"
+      ],
+      "title": "Bell pair"
+    },
+    {
+      "id": "L31",
+      "number": 31,
+      "ok": true,
+      "optimal_length": 3,
+      "problems": [],
+      "reference_length": 3,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 21,
+      "solver_solution": [
+        "H on q0",
+        "CNOT q0→q1",
+        "X on q0"
+      ],
+      "title": "Opposite partners"
+    },
+    {
+      "id": "L32",
+      "number": 32,
+      "ok": true,
+      "optimal_length": 3,
+      "problems": [],
+      "reference_length": 3,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 13,
+      "solver_solution": [
+        "H on q0",
+        "CNOT q0→q1",
+        "Z on q0"
+      ],
+      "title": "Minus partners"
+    },
+    {
+      "id": "L33",
+      "number": 33,
+      "ok": true,
+      "optimal_length": 1,
+      "problems": [],
+      "reference_length": 1,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 2,
+      "solver_solution": [
+        "Y on q0"
+      ],
+      "title": "Meet Y"
+    },
+    {
+      "id": "L34",
+      "number": 34,
+      "ok": true,
+      "optimal_length": 4,
+      "problems": [],
+      "reference_length": 4,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 33,
+      "solver_solution": [
+        "X on q0",
+        "H on q0",
+        "X on q1",
+        "CNOT q0→q1"
+      ],
+      "title": "Singlet"
+    },
+    {
+      "id": "L35",
+      "number": 35,
+      "ok": true,
+      "optimal_length": 3,
+      "problems": [],
+      "reference_length": 3,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 18,
+      "solver_solution": [
+        "H on q0",
+        "CNOT q0→q1",
+        "CNOT q0→q2"
+      ],
+      "title": "Three in a row"
+    },
+    {
+      "id": "L36",
+      "number": 36,
+      "ok": true,
+      "optimal_length": 2,
+      "problems": [],
+      "reference_length": 2,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 3,
+      "solver_solution": [
+        "T on q0",
+        "T on q0"
+      ],
+      "title": "Eighth turns"
+    },
+    {
+      "id": "L37",
+      "number": 37,
+      "ok": true,
+      "optimal_length": 3,
+      "problems": [],
+      "reference_length": 3,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 27,
+      "solver_solution": [
+        "H on q0",
+        "Z on q0",
+        "CNOT q0→q1"
+      ],
+      "title": "Lean minus pair"
+    },
+    {
+      "id": "L38",
+      "number": 38,
+      "ok": true,
+      "optimal_length": 2,
+      "problems": [],
+      "reference_length": 2,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 8,
+      "solver_solution": [
+        "CNOT q0→q1",
+        "H on q0"
+      ],
+      "title": "Untangle"
+    },
+    {
+      "id": "L39",
+      "number": 39,
+      "ok": true,
+      "optimal_length": 2,
+      "problems": [],
+      "reference_length": 2,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 3,
+      "solver_solution": [
+        "CNOT q0→q1",
+        "CNOT q1→q0"
+      ],
+      "title": "Pass it down"
+    },
+    {
+      "id": "L40",
+      "number": 40,
+      "ok": true,
+      "optimal_length": 4,
+      "problems": [],
+      "reference_length": 4,
+      "reference_solution_ok": true,
+      "solver_found": true,
+      "solver_nodes": 98,
+      "solver_solution": [
+        "H on q0",
+        "S on q0",
+        "CNOT q0→q1",
+        "CNOT q0→q2"
+      ],
+      "title": "Grand finale"
+    }
+  ],
+  "ok": true
+}

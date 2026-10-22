@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "id": "L03",
+  "number": 3,
+  "chapter": "fundamentals",
+  "title": "Undo a flip",
+  "qubits": 1,
+  "start_state": "0",
+  "available_gates": [
+    "X"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [
+    {
+      "gate": "X",
+      "target": 0
+    }
+  ],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "label": "0"
+    }
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 1
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "One X is already in the circuit and can't be moved. End at |0⟩.",
+    "example": "X then X = no change",
+    "action": "Add a second X."
+  },
+  "hints": [
+    "Two flips bring you back to where you started."
+  ],
+  "why": "Applying X twice is the same as doing nothing: X·X = I, the identity.",
+  "success": "Two flips cancel out.",
+  "solution": [
+    {
+      "gate": "X",
+      "target": 0
+    }
+  ]
+}

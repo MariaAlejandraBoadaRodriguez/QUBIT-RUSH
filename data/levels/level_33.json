@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "id": "L33",
+  "number": 33,
+  "chapter": "algorithms",
+  "title": "Meet Y",
+  "qubits": 1,
+  "start_state": "0",
+  "available_gates": [
+    "Y"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "label": "1"
+    }
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 1
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Y flips the qubit and adds an i. Reach |1⟩ with Y.",
+    "example": "Y|0⟩ = i|1⟩"
+  },
+  "hints": [
+    "One Y is enough."
+  ],
+  "why": "Y|0⟩ = i|1⟩. Multiplying the whole state by i is a global phase: no measurement or later gate can detect it, so it counts as |1⟩.",
+  "success": "Global phase doesn't matter.",
+  "solution": [
+    {
+      "gate": "Y",
+      "target": 0
+    }
+  ],
+  "new_gate": "Y"
+}

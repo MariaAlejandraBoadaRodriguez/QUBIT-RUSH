@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "id": "L37",
+  "number": 37,
+  "chapter": "algorithms",
+  "title": "Lean minus pair",
+  "qubits": 2,
+  "start_state": "00",
+  "available_gates": [
+    "H",
+    "X",
+    "Z",
+    "CNOT"
+  ],
+  "max_slots": 5,
+  "fixed_gates": [],
+  "goal": {
+    "type": "gate_efficiency",
+    "target": {
+      "kets": {
+        "00": 0.7071067811865476,
+        "11": -0.7071067811865476
+      }
+    },
+    "max_gates": 3
+  },
+  "scoring": {
+    "two_star_gates": 3,
+    "three_star_gates": 3
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Make (|00⟩ − |11⟩)/√2 with at most three gates."
+  },
+  "hints": [
+    "H on |1⟩ already gives a minus sign."
+  ],
+  "why": "There are several three-gate answers. Efficient circuits often reuse a sign that a gate creates anyway.",
+  "success": "Phase and entanglement, efficiently.",
+  "solution": [
+    {
+      "gate": "X",
+      "target": 0
+    },
+    {
+      "gate": "H",
+      "target": 0
+    },
+    {
+      "gate": "CNOT",
+      "target": 1,
+      "control": 0
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "id": "L22",
+  "number": 22,
+  "chapter": "fundamentals",
+  "title": "Quarter turns",
+  "qubits": 1,
+  "start_state": "0",
+  "available_gates": [
+    "S",
+    "H"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [
+    {
+      "gate": "H",
+      "target": 0
+    }
+  ],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "kets": {
+        "0": 0.7071067811865476,
+        "1": -0.7071067811865476
+      }
+    }
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 2
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "S adds a quarter-turn of phase. Turn |+⟩ into |−⟩ using S.",
+    "example": "S S = Z"
+  },
+  "hints": [
+    "How many quarter turns make a half turn?"
+  ],
+  "why": "S multiplies the |1⟩ amplitude by i. Two S gates multiply it by i·i = −1, which is a Z.",
+  "success": "Two quarter turns make a half turn.",
+  "solution": [
+    {
+      "gate": "S",
+      "target": 0
+    },
+    {
+      "gate": "S",
+      "target": 0
+    }
+  ],
+  "new_gate": "S"
+}

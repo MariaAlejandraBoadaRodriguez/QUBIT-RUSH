@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "L24",
+  "number": 24,
+  "chapter": "fundamentals",
+  "title": "Imaginary direction",
+  "qubits": 1,
+  "start_state": "0",
+  "available_gates": [
+    "S",
+    "H",
+    "Z"
+  ],
+  "max_slots": 4,
+  "fixed_gates": [],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "kets": {
+        "0": 0.7071067811865476,
+        "1": [
+          0,
+          0.7071067811865476
+        ]
+      }
+    }
+  },
+  "scoring": {
+    "two_star_gates": 3,
+    "three_star_gates": 2
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Make the state 0.707|0⟩ + 0.707i|1⟩."
+  },
+  "hints": [
+    "Make |+⟩, then add a quarter turn."
+  ],
+  "why": "The amplitude i means a phase a quarter of the way round. This state points along the y-axis of the Bloch sphere.",
+  "success": "A phase you can't see in the bars.",
+  "solution": [
+    {
+      "gate": "H",
+      "target": 0
+    },
+    {
+      "gate": "S",
+      "target": 0
+    }
+  ]
+}

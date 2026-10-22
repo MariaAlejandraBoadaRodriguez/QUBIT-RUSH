@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "id": "L27",
+  "number": 27,
+  "chapter": "entanglement",
+  "title": "Four outcomes",
+  "qubits": 2,
+  "start_state": "00",
+  "available_gates": [
+    "H",
+    "X"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [],
+  "goal": {
+    "type": "measurement_distribution",
+    "target": {
+      "probabilities": {
+        "00": 0.25,
+        "10": 0.25,
+        "01": 0.25,
+        "11": 0.25
+      }
+    }
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 2
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Make all four results equally likely."
+  },
+  "hints": [
+    "Put each qubit in superposition."
+  ],
+  "why": "H on both qubits gives four equal amplitudes of 0.5, so each result has a 25% chance.",
+  "success": "Four equal chances.",
+  "solution": [
+    {
+      "gate": "H",
+      "target": 0
+    },
+    {
+      "gate": "H",
+      "target": 1
+    }
+  ]
+}

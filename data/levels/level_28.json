@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "id": "L28",
+  "number": 28,
+  "chapter": "entanglement",
+  "title": "Controlled flip",
+  "qubits": 2,
+  "start_state": "00",
+  "available_gates": [
+    "CNOT"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [
+    {
+      "gate": "X",
+      "target": 0
+    }
+  ],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "label": "11"
+    }
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 1
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "CNOT flips the target only when the control is 1. q0 is already 1. Make |11⟩.",
+    "example": "CNOT |10⟩ = |11⟩",
+    "action": "Select q0 and tap CNOT (control on q0, target on q1)."
+  },
+  "hints": [
+    "The dot is the control, ⊕ is the target."
+  ],
+  "why": "CNOT is a conditional X. Because q0 is 1, q1 gets flipped.",
+  "success": "The control said yes.",
+  "solution": [
+    {
+      "gate": "CNOT",
+      "target": 1,
+      "control": 0
+    }
+  ],
+  "new_gate": "CNOT"
+}

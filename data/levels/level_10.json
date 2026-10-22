@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "L10",
+  "number": 10,
+  "chapter": "fundamentals",
+  "title": "Half and half",
+  "qubits": 1,
+  "start_state": "0",
+  "available_gates": [
+    "H",
+    "X"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [],
+  "goal": {
+    "type": "measurement_distribution",
+    "target": {
+      "probabilities": {
+        "0": 0.5,
+        "1": 0.5
+      }
+    }
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 1
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Make 0 and 1 equally likely.",
+    "example": "P(0) = P(1) = 50%"
+  },
+  "hints": [
+    "Each amplitude is about 0.707, and 0.707² ≈ 0.5."
+  ],
+  "why": "If you ran this circuit many times you would see roughly half 0s and half 1s. A single run only shows one result and proves nothing on its own.",
+  "success": "50/50 over many runs.",
+  "solution": [
+    {
+      "gate": "H",
+      "target": 0
+    }
+  ]
+}

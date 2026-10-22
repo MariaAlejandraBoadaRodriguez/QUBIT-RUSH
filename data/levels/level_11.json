@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "id": "L11",
+  "number": 11,
+  "chapter": "fundamentals",
+  "title": "H undoes H",
+  "qubits": 1,
+  "start_state": "0",
+  "available_gates": [
+    "H",
+    "X"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [
+    {
+      "gate": "H",
+      "target": 0
+    }
+  ],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "label": "0"
+    }
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 1
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "One H is fixed. Get back to a sure |0⟩.",
+    "example": "H H = I"
+  },
+  "hints": [
+    "What undoes H?"
+  ],
+  "why": "H is its own inverse. The two paths to |1⟩ cancel out (interference), leaving |0⟩ for sure.",
+  "success": "Interference brought back |0⟩.",
+  "solution": [
+    {
+      "gate": "H",
+      "target": 0
+    }
+  ]
+}

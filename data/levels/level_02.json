@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "id": "L02",
+  "number": 2,
+  "chapter": "fundamentals",
+  "title": "Flip back",
+  "qubits": 1,
+  "start_state": "1",
+  "available_gates": [
+    "X"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "label": "0"
+    }
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 1
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "This qubit starts as |1⟩. Bring it back to |0⟩.",
+    "example": "X|1⟩ = |0⟩",
+    "action": "Place one X gate and Run."
+  },
+  "hints": [
+    "X also flips 1 to 0."
+  ],
+  "why": "X works in both directions: it swaps 0 and 1.",
+  "success": "Back to |0⟩.",
+  "solution": [
+    {
+      "gate": "X",
+      "target": 0
+    }
+  ]
+}

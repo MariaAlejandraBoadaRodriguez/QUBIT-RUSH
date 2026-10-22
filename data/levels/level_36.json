@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "id": "L36",
+  "number": 36,
+  "chapter": "algorithms",
+  "title": "Eighth turns",
+  "qubits": 1,
+  "start_state": "0",
+  "available_gates": [
+    "T"
+  ],
+  "max_slots": 4,
+  "fixed_gates": [
+    {
+      "gate": "H",
+      "target": 0
+    }
+  ],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "kets": {
+        "0": 0.7071067811865476,
+        "1": [
+          0,
+          0.7071067811865476
+        ]
+      }
+    }
+  },
+  "scoring": {
+    "two_star_gates": 3,
+    "three_star_gates": 2
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "T adds an eighth of a turn. From |+⟩, reach 0.707|0⟩ + 0.707i|1⟩.",
+    "example": "T T = S"
+  },
+  "hints": [
+    "How many eighth turns make a quarter turn?"
+  ],
+  "why": "Two T gates make an S. Fine phase steps like T are what make quantum computers universal.",
+  "success": "Two eighths make a quarter.",
+  "solution": [
+    {
+      "gate": "T",
+      "target": 0
+    },
+    {
+      "gate": "T",
+      "target": 0
+    }
+  ],
+  "new_gate": "T"
+}

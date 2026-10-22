@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "id": "L08",
+  "number": 8,
+  "chapter": "fundamentals",
+  "title": "Gate budget",
+  "qubits": 1,
+  "start_state": "0",
+  "available_gates": [
+    "X",
+    "I"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [],
+  "goal": {
+    "type": "gate_efficiency",
+    "target": {
+      "label": "1"
+    },
+    "max_gates": 1
+  },
+  "scoring": {
+    "two_star_gates": 1,
+    "three_star_gates": 1
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Efficient circuits use fewer gates. Reach |1⟩ with just one gate."
+  },
+  "hints": [
+    "Extra I gates count against your budget."
+  ],
+  "why": "Efficient circuits matter on real quantum computers: every gate adds a little noise.",
+  "success": "Lean and correct.",
+  "solution": [
+    {
+      "gate": "X",
+      "target": 0
+    }
+  ]
+}

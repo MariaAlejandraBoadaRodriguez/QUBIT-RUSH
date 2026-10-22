@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "L35",
+  "number": 35,
+  "chapter": "algorithms",
+  "title": "Three in a row",
+  "qubits": 3,
+  "start_state": "000",
+  "available_gates": [
+    "H",
+    "CNOT"
+  ],
+  "max_slots": 4,
+  "fixed_gates": [],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "kets": {
+        "000": 0.7071067811865476,
+        "111": 0.7071067811865476
+      }
+    }
+  },
+  "scoring": {
+    "two_star_gates": 4,
+    "three_star_gates": 3
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Link three qubits: make (|000⟩ + |111⟩)/√2."
+  },
+  "hints": [
+    "A Bell pair, then pass it along with another CNOT."
+  ],
+  "why": "This GHZ state is entangled across all three qubits: measuring any one of them decides the other two.",
+  "success": "Three-way entanglement.",
+  "solution": [
+    {
+      "gate": "H",
+      "target": 0
+    },
+    {
+      "gate": "CNOT",
+      "target": 1,
+      "control": 0
+    },
+    {
+      "gate": "CNOT",
+      "target": 2,
+      "control": 1
+    }
+  ]
+}

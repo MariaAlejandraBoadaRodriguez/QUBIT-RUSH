@@ -1,0 +1,19 @@
+# Godot
+.godot/
+*.translation
+/android/build/
+# Build outputs
+/build/
+*.apk
+*.aab
+*.idsig
+# Secrets: never commit keystores or signing material
+*.keystore
+*.jks
+keystore.properties
+signing.env
+export_credentials.cfg
+# Android plugin build outputs
+android/plugins/**/build/
+android/plugins/**/.gradle/
+android/plugins/**/local.properties

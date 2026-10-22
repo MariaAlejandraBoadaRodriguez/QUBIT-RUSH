@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "id": "L25",
+  "number": 25,
+  "chapter": "entanglement",
+  "title": "A second wire",
+  "qubits": 2,
+  "start_state": "00",
+  "available_gates": [
+    "X"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "label": "01"
+    }
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 1
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Two qubits: q0 on top, q1 below. Kets list q0 first. Make |01⟩.",
+    "example": "|01⟩ means q0 = 0, q1 = 1",
+    "action": "Tap wire q1, then tap X."
+  },
+  "hints": [
+    "Select the bottom wire before placing X."
+  ],
+  "why": "Each wire is its own qubit. |01⟩ means the first qubit is 0 and the second is 1.",
+  "success": "Right wire, right state.",
+  "solution": [
+    {
+      "gate": "X",
+      "target": 1
+    }
+  ]
+}

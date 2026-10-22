@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "id": "L16",
+  "number": 16,
+  "chapter": "fundamentals",
+  "title": "Plus from one",
+  "qubits": 1,
+  "start_state": "1",
+  "available_gates": [
+    "H",
+    "X"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [],
+  "goal": {
+    "type": "gate_efficiency",
+    "target": {
+      "kets": {
+        "0": 0.7071067811865476,
+        "1": 0.7071067811865476
+      }
+    },
+    "max_gates": 2
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 2
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Start from |1⟩ and make |+⟩ using at most two gates."
+  },
+  "hints": [
+    "H on |1⟩ gives |−⟩, not |+⟩. Fix the starting point first."
+  ],
+  "why": "Order matters: X then H gives |+⟩, but H then X gives |−⟩ (up to a global phase). Gates usually do not commute.",
+  "success": "Efficient and exact.",
+  "solution": [
+    {
+      "gate": "X",
+      "target": 0
+    },
+    {
+      "gate": "H",
+      "target": 0
+    }
+  ]
+}
