@@ -11,7 +11,14 @@ PKG="com.qubitrush.game"
 mkdir -p "$OUT"
 LOG="$OUT/logcat.txt"
 RESULT="$OUT/smoke-result.txt"
-fail() { echo "SMOKE FAIL: $*" | tee -a "$RESULT"; adb logcat -d > "$LOG" 2>/dev/null || true; exit 1; }
+fail() { echo "SMOKE FAIL: $*" | tee -a "$RESULT"; # Rendering check: screenshots must show the real design colours (warm
+# background, navy Play/Run, soft-blue circuit slots, green success title).
+PNG="python3 $(dirname "$0")/../../tools/png_colors.py"
+$PNG "$OUT/01-home.png" FAFAF8:0.5 253C58:0.01 | tee -a "$RESULT" || fail "home screen did not render"
+$PNG "$OUT/02-level1.png" FAFAF8:0.3 7DA7EA:0.002 253C58:0.005 | tee -a "$RESULT" || fail "level 1 did not render"
+$PNG "$OUT/03-results.png" FAFAF8:0.3 3B806C:0.001 | tee -a "$RESULT" || fail "results screen did not render"
+
+adb logcat -d > "$LOG" 2>/dev/null || true; exit 1; }
 
 adb wait-for-device
 for i in $(seq 1 90); do
@@ -78,6 +85,13 @@ adb shell am start -n "$PKG/com.godot.game.GodotAppLauncher" > /dev/null
 sleep 5
 adb shell pidof "$PKG" > /dev/null || fail "process died after resume"
 shot 05-resumed
+
+# Rendering check: screenshots must show the real design colours (warm
+# background, navy Play/Run, soft-blue circuit slots, green success title).
+PNG="python3 $(dirname "$0")/../../tools/png_colors.py"
+$PNG "$OUT/01-home.png" FAFAF8:0.5 253C58:0.01 | tee -a "$RESULT" || fail "home screen did not render"
+$PNG "$OUT/02-level1.png" FAFAF8:0.3 7DA7EA:0.002 253C58:0.005 | tee -a "$RESULT" || fail "level 1 did not render"
+$PNG "$OUT/03-results.png" FAFAF8:0.3 3B806C:0.001 | tee -a "$RESULT" || fail "results screen did not render"
 
 adb logcat -d > "$LOG"
 if grep -aE "FATAL EXCEPTION|ANR in $PKG|SCRIPT ERROR|E godot[^:]*: ERROR" "$LOG" > "$OUT/errors.txt"; then

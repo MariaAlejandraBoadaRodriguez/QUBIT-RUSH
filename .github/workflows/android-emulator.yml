@@ -40,6 +40,13 @@ jobs:
         run: |
           bash scripts/setup-env.sh
           echo "$HOME/tools" >> "$GITHUB_PATH"
+          # Persist the toolchain for later steps (each step is a new shell).
+          JDK17="$(ls -d /usr/lib/jvm/temurin-17-jdk-amd64 /usr/lib/jvm/java-17-openjdk-amd64 2>/dev/null | head -1)"
+          {
+            echo "ANDROID_HOME=$ANDROID_HOME"
+            echo "ANDROID_SDK_ROOT=$ANDROID_HOME"
+            echo "JAVA_HOME=${JDK17:-$JAVA_HOME}"
+          } >> "$GITHUB_ENV"
 
       - name: Import project
         run: ~/tools/godot --headless --path . --import
@@ -61,6 +68,8 @@ jobs:
       - name: Build Android plugin and install Gradle template
         run: |
           bash scripts/install-android-template.sh
+          echo "sdk.dir=$ANDROID_HOME" > android/build/local.properties
+          echo "sdk.dir=$ANDROID_HOME" > android/plugins/qubitrush-ads/local.properties
           bash scripts/build-android-plugin.sh
 
       - name: Export debug APK
@@ -112,7 +121,7 @@ jobs:
           arch: x86_64
           profile: pixel_6
           disable-animations: true
-          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim
+          emulator-options: -no-window -gpu swangle_indirect -no-snapshot -noaudio -no-boot-anim
           script: bash scripts/ci/emulator-smoke.sh artifact/build/qubit-rush-debug.apk emulator-api${{ matrix.api-level }}
 
       - name: Upload screenshots and logcat
