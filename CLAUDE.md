@@ -8,7 +8,17 @@
 - At the start of every session run: `bash scripts/setup-env.sh && source ~/.bashrc`
 - Godot binary: `~/tools/godot` (pinned version in `scripts/setup-env.sh`; confirm it is the latest 4.x stable before Phase A and record it in README).
 - Android SDK: `$ANDROID_HOME` (API 36 platform + build-tools). JDK 17.
-- No emulator/KVM in this container: mark device/emulator runtime checks **BLOCKED / NOT VERIFIED**; never claim them as PASS. The owner will install the debug APK on a real phone.
+- No emulator/KVM in this container. Emulator testing runs in **GitHub Actions** instead (see "Android emulator CI" below). Physical-device testing is done by the owner and stays **BLOCKED / NOT VERIFIED** until she reports it.
+
+## Android emulator CI (Gate E)
+- Create `.github/workflows/android-emulator.yml` triggered on push and `workflow_dispatch`:
+  - `ubuntu-latest` runner; enable KVM (udev rule step); set up JDK 17; install the pinned Godot + export templates + Android SDK (reuse `scripts/setup-env.sh`).
+  - Run headless unit/integration/level-solvability tests, then export the debug APK.
+  - Use `reactivecircus/android-emulator-runner` (pin a released version) with an x86_64 `google_apis` image at API 36 (fall back to the newest available API if 36 is unavailable, and document it), plus a second job at API 26 for the minimum-version check if runtime allows.
+  - Inside the emulator: `adb install` the APK, launch the main activity, wait for startup, capture `adb shell screencap` screenshots of home, level 1 and results, run a scripted smoke flow (tap Play → place X gate → Run) via `adb shell input` with coordinates computed from the known layout, collect `adb logcat`, and fail the job on crash, ANR, or Godot `ERROR`/`SCRIPT ERROR` lines.
+  - Upload APK, screenshots, logcat and test results as workflow artifacts.
+- After each push, check the workflow run result with `gh run list` / `gh run view --log-failed` (or the GitHub REST API). Diagnose and fix failures, then push again until it passes.
+- Gate E = PASS only when the emulator workflow actually passes; cite the run URL in `reports/FINAL_VERIFICATION.md`. If the run results cannot be read from this session, record that in `reports/BLOCKERS.md` and keep working on everything else.
 - If a download is blocked by the network allowlist, record the exact domain in `reports/BLOCKERS.md` and continue with independent work.
 
 ## Commands (keep these working)
