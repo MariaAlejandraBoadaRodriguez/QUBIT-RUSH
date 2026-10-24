@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "id": "L21",
+  "number": 21,
+  "chapter": "fundamentals",
+  "title": "Cancel the phase",
+  "qubits": 1,
+  "start_state": "0",
+  "available_gates": [
+    "Z",
+    "H"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [
+    {
+      "gate": "H",
+      "target": 0
+    },
+    {
+      "gate": "Z",
+      "target": 0
+    }
+  ],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "kets": {
+        "0": 0.7071067811865476,
+        "1": 0.7071067811865476
+      }
+    }
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 1
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "The fixed gates made |−⟩. Turn it back into |+⟩."
+  },
+  "hints": [
+    "Z twice is the identity."
+  ],
+  "why": "Z·Z = I, so a second Z removes the minus sign.",
+  "success": "Back to |+⟩.",
+  "solution": [
+    {
+      "gate": "Z",
+      "target": 0
+    }
+  ]
+}

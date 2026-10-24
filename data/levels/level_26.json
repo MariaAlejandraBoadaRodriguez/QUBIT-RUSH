@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "id": "L26",
+  "number": 26,
+  "chapter": "entanglement",
+  "title": "Both flipped",
+  "qubits": 2,
+  "start_state": "00",
+  "available_gates": [
+    "X"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "label": "11"
+    }
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 2
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Make |11⟩."
+  },
+  "hints": [
+    "Each qubit needs its own X."
+  ],
+  "why": "With two qubits there are four basis states: |00⟩, |10⟩, |01⟩ and |11⟩.",
+  "success": "Both qubits are 1.",
+  "solution": [
+    {
+      "gate": "X",
+      "target": 0
+    },
+    {
+      "gate": "X",
+      "target": 1
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "id": "L06",
+  "number": 6,
+  "chapter": "fundamentals",
+  "title": "Always 1",
+  "qubits": 1,
+  "start_state": "0",
+  "available_gates": [
+    "X",
+    "I"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [],
+  "goal": {
+    "type": "measurement_distribution",
+    "target": {
+      "probabilities": {
+        "0": 0.0,
+        "1": 1.0
+      }
+    }
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 1
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "A probability tells you how often a result appears after many runs. Make 1 appear every time.",
+    "example": "P(1) = 100%",
+    "action": "Watch the bars as you build."
+  },
+  "hints": [
+    "The bars show the chance of each result."
+  ],
+  "why": "A basis state like |1⟩ gives the same result on every run: probability 100%.",
+  "success": "1 every time.",
+  "solution": [
+    {
+      "gate": "X",
+      "target": 0
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "id": "L29",
+  "number": 29,
+  "chapter": "entanglement",
+  "title": "Copy the bit",
+  "qubits": 2,
+  "start_state": "00",
+  "available_gates": [
+    "X",
+    "CNOT"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "label": "11"
+    }
+  },
+  "scoring": {
+    "two_star_gates": 3,
+    "three_star_gates": 2
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Start from |00⟩ and make |11⟩ using one X and one CNOT."
+  },
+  "hints": [
+    "Set the control first, then let CNOT copy it."
+  ],
+  "why": "On basis states CNOT copies the control into the target. (Quantum states in superposition can't be copied, as the next level shows.)",
+  "success": "Bit copied.",
+  "solution": [
+    {
+      "gate": "X",
+      "target": 0
+    },
+    {
+      "gate": "CNOT",
+      "target": 1,
+      "control": 0
+    }
+  ]
+}

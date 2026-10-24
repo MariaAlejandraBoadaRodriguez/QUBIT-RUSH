@@ -1,0 +1,43 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+OK   L01 Reach |1⟩                optimal=1 ref=1 nodes=2 
+OK   L02 Flip back                optimal=1 ref=1 nodes=2 
+OK   L03 Undo a flip              optimal=1 ref=1 nodes=2 
+OK   L04 The identity             optimal=1 ref=1 nodes=2 
+OK   L05 Count the flips          optimal=1 ref=1 nodes=2 
+OK   L06 Always 1                 optimal=1 ref=1 nodes=2 
+OK   L07 Always 0                 optimal=1 ref=1 nodes=2 
+OK   L08 Gate budget              optimal=1 ref=1 nodes=2 
+OK   L09 Two possibilities        optimal=1 ref=1 nodes=3 
+OK   L10 Half and half            optimal=1 ref=1 nodes=3 
+OK   L11 H undoes H               optimal=1 ref=1 nodes=2 
+OK   L12 A negative amplitude     optimal=1 ref=1 nodes=3 
+OK   L13 Same odds, new state     optimal=2 ref=2 nodes=4 
+OK   L14 Back from minus          optimal=1 ref=1 nodes=3 
+OK   L15 Amplitude vs probability optimal=1 ref=1 nodes=3 
+OK   L16 Plus from one            optimal=2 ref=2 nodes=5 
+OK   L17 Phase flip               optimal=1 ref=1 nodes=3 
+OK   L18 Invisible change         optimal=2 ref=2 nodes=3 
+OK   L19 Reveal the phase         optimal=1 ref=1 nodes=3 
+OK   L20 H–Z–H                    optimal=3 ref=3 nodes=4 
+OK   L21 Cancel the phase         optimal=1 ref=1 nodes=3 
+OK   L22 Quarter turns            optimal=2 ref=2 nodes=5 
+OK   L23 Phase to bit             optimal=4 ref=4 nodes=8 
+OK   L24 Imaginary direction      optimal=2 ref=2 nodes=4 
+OK   L25 A second wire            optimal=1 ref=1 nodes=3 
+OK   L26 Both flipped             optimal=2 ref=2 nodes=4 
+OK   L27 Four outcomes            optimal=2 ref=2 nodes=11 
+OK   L28 Controlled flip          optimal=1 ref=1 nodes=2 
+OK   L29 Copy the bit             optimal=2 ref=2 nodes=4 
+OK   L30 Bell pair                optimal=2 ref=2 nodes=5 
+OK   L31 Opposite partners        optimal=3 ref=3 nodes=21 
+OK   L32 Minus partners           optimal=3 ref=3 nodes=13 
+OK   L33 Meet Y                   optimal=1 ref=1 nodes=2 
+OK   L34 Singlet                  optimal=4 ref=4 nodes=33 
+OK   L35 Three in a row           optimal=3 ref=3 nodes=18 
+OK   L36 Eighth turns             optimal=2 ref=2 nodes=3 
+OK   L37 Lean minus pair          optimal=3 ref=3 nodes=27 
+OK   L38 Untangle                 optimal=2 ref=2 nodes=8 
+OK   L39 Pass it down             optimal=2 ref=2 nodes=3 
+OK   L40 Grand finale             optimal=4 ref=4 nodes=98 
+Levels solvable and valid: 40/40 -> PASS

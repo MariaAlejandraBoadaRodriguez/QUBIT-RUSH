@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "id": "L23",
+  "number": 23,
+  "chapter": "fundamentals",
+  "title": "Phase to bit",
+  "qubits": 1,
+  "start_state": "0",
+  "available_gates": [
+    "S",
+    "H"
+  ],
+  "max_slots": 5,
+  "fixed_gates": [],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "label": "1"
+    }
+  },
+  "scoring": {
+    "two_star_gates": 5,
+    "three_star_gates": 4
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Reach |1⟩ using only H and S."
+  },
+  "hints": [
+    "Build a Z out of S gates, then use the H–Z–H trick."
+  ],
+  "why": "H S S H = H Z H = X. Phase gates combine like turns of a dial.",
+  "success": "Quarter turns, then interference.",
+  "solution": [
+    {
+      "gate": "H",
+      "target": 0
+    },
+    {
+      "gate": "S",
+      "target": 0
+    },
+    {
+      "gate": "S",
+      "target": 0
+    },
+    {
+      "gate": "H",
+      "target": 0
+    }
+  ]
+}

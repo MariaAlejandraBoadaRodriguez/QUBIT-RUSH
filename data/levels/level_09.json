@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "id": "L09",
+  "number": 9,
+  "chapter": "fundamentals",
+  "title": "Two possibilities",
+  "qubits": 1,
+  "start_state": "0",
+  "available_gates": [
+    "H",
+    "X"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "kets": {
+        "0": 0.7071067811865476,
+        "1": 0.7071067811865476
+      }
+    }
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 1
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "The H gate creates two possibilities. Make |+⟩.",
+    "example": "H|0⟩ = |+⟩ = 0.707|0⟩ + 0.707|1⟩",
+    "action": "Tap H, then Run."
+  },
+  "hints": [
+    "H turns |0⟩ into an equal mix of |0⟩ and |1⟩."
+  ],
+  "why": "|+⟩ has equal amplitudes for 0 and 1. Measuring it gives 0 about half the time and 1 about half the time. It is not a hidden coin: a later gate can turn it back into a sure result.",
+  "success": "You made a superposition.",
+  "solution": [
+    {
+      "gate": "H",
+      "target": 0
+    }
+  ],
+  "new_gate": "H"
+}

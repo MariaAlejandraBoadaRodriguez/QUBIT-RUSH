@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "L15",
+  "number": 15,
+  "chapter": "fundamentals",
+  "title": "Amplitude vs probability",
+  "qubits": 1,
+  "start_state": "1",
+  "available_gates": [
+    "H",
+    "X"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [],
+  "goal": {
+    "type": "measurement_distribution",
+    "target": {
+      "probabilities": {
+        "0": 0.5,
+        "1": 0.5
+      }
+    }
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 1
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Start from |1⟩ and make each result equally likely.",
+    "example": "(−0.707)² = 0.5"
+  },
+  "hints": [
+    "A negative amplitude still gives a positive probability."
+  ],
+  "why": "Probability is the square of the amplitude's size. +0.707 and −0.707 both give 50%.",
+  "success": "Probabilities can't be negative, amplitudes can.",
+  "solution": [
+    {
+      "gate": "H",
+      "target": 0
+    }
+  ]
+}

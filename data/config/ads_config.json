@@ -1,0 +1,18 @@
+{
+  "config_version": 1,
+  "_comment": "Safe offline defaults. Only Google's public TEST ad unit IDs live in source control. Production IDs are injected at release-build time by the owner (see docs/ADS_INTEGRATION.md) and require the Families/target-audience decision to be recorded first.",
+  "ads_enabled": true,
+  "test_mode": true,
+  "audience_policy": "child_safe",
+  "rewarded_enabled": true,
+  "interstitial_enabled": false,
+  "interstitial_first_after_level": 6,
+  "interstitial_min_levels_between": 4,
+  "interstitial_min_seconds_between": 600,
+  "max_ad_content_rating": "G",
+  "android": {
+    "app_id": "ca-app-pub-3940256099942544~3347511713",
+    "rewarded_unit": "ca-app-pub-3940256099942544/5224354917",
+    "interstitial_unit": "ca-app-pub-3940256099942544/1033173712"
+  }
+}

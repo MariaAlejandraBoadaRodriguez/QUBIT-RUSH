@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "id": "L38",
+  "number": 38,
+  "chapter": "algorithms",
+  "title": "Untangle",
+  "qubits": 2,
+  "start_state": "00",
+  "available_gates": [
+    "H",
+    "CNOT"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [
+    {
+      "gate": "H",
+      "target": 0
+    },
+    {
+      "gate": "CNOT",
+      "target": 1,
+      "control": 0
+    }
+  ],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "label": "00"
+    }
+  },
+  "scoring": {
+    "two_star_gates": 3,
+    "three_star_gates": 2
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "The fixed gates made a Bell pair. Undo it back to |00⟩."
+  },
+  "hints": [
+    "Undo the steps in reverse order."
+  ],
+  "why": "Quantum gates are reversible. Running a circuit backwards undoes it, even entanglement.",
+  "success": "Untangled.",
+  "solution": [
+    {
+      "gate": "CNOT",
+      "target": 1,
+      "control": 0
+    },
+    {
+      "gate": "H",
+      "target": 0
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "id": "L34",
+  "number": 34,
+  "chapter": "algorithms",
+  "title": "Singlet",
+  "qubits": 2,
+  "start_state": "00",
+  "available_gates": [
+    "H",
+    "X",
+    "CNOT"
+  ],
+  "max_slots": 5,
+  "fixed_gates": [],
+  "goal": {
+    "type": "gate_efficiency",
+    "target": {
+      "kets": {
+        "01": 0.7071067811865476,
+        "10": -0.7071067811865476
+      }
+    },
+    "max_gates": 4
+  },
+  "scoring": {
+    "two_star_gates": 4,
+    "three_star_gates": 4
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Make (|01⟩ − |10⟩)/√2 with at most four gates."
+  },
+  "hints": [
+    "X on q0 first: H then gives a minus sign.",
+    "X q0, H q0, CNOT, X q1."
+  ],
+  "why": "This 'singlet' state gives opposite results whichever way you measure. It is a favourite in quantum experiments.",
+  "success": "The singlet state.",
+  "solution": [
+    {
+      "gate": "X",
+      "target": 0
+    },
+    {
+      "gate": "H",
+      "target": 0
+    },
+    {
+      "gate": "CNOT",
+      "target": 1,
+      "control": 0
+    },
+    {
+      "gate": "X",
+      "target": 1
+    }
+  ]
+}

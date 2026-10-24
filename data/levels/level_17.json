@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "L17",
+  "number": 17,
+  "chapter": "fundamentals",
+  "title": "Phase flip",
+  "qubits": 1,
+  "start_state": "0",
+  "available_gates": [
+    "Z",
+    "H"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [
+    {
+      "gate": "H",
+      "target": 0
+    }
+  ],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "kets": {
+        "0": 0.7071067811865476,
+        "1": -0.7071067811865476
+      }
+    }
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 1
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "The Z gate changes a phase. The probability may look the same, but the next gate can reveal the difference.",
+    "example": "Z|+⟩ = |−⟩",
+    "action": "Add Z after the fixed H."
+  },
+  "hints": [
+    "Z puts a minus sign on the |1⟩ part."
+  ],
+  "why": "Z flips the sign of the |1⟩ amplitude. The bars do not move, but the state is now |−⟩.",
+  "success": "Same bars, different state.",
+  "solution": [
+    {
+      "gate": "Z",
+      "target": 0
+    }
+  ],
+  "new_gate": "Z"
+}

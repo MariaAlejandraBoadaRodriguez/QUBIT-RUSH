@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "L07",
+  "number": 7,
+  "chapter": "fundamentals",
+  "title": "Always 0",
+  "qubits": 1,
+  "start_state": "1",
+  "available_gates": [
+    "X",
+    "I"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [],
+  "goal": {
+    "type": "measurement_distribution",
+    "target": {
+      "probabilities": {
+        "0": 1.0,
+        "1": 0.0
+      }
+    }
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 1
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "This qubit starts as |1⟩. Make 0 appear on every run.",
+    "example": "P(0) = 100%"
+  },
+  "hints": [
+    "Flip it."
+  ],
+  "why": "Measuring |0⟩ always gives 0. Probabilities of all results always add up to 100%.",
+  "success": "0 every time.",
+  "solution": [
+    {
+      "gate": "X",
+      "target": 0
+    }
+  ]
+}

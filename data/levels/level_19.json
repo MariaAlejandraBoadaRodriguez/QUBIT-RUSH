@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "id": "L19",
+  "number": 19,
+  "chapter": "fundamentals",
+  "title": "Reveal the phase",
+  "qubits": 1,
+  "start_state": "0",
+  "available_gates": [
+    "Z",
+    "H"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [
+    {
+      "gate": "H",
+      "target": 0
+    },
+    {
+      "gate": "Z",
+      "target": 0
+    }
+  ],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "label": "1"
+    }
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 1
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "The fixed H and Z made |−⟩. Turn the hidden phase into a sure result."
+  },
+  "hints": [
+    "Which gate turns |−⟩ into |1⟩?"
+  ],
+  "why": "Interference: H makes the two paths to |0⟩ cancel and the paths to |1⟩ add up.",
+  "success": "Phase revealed as a 1.",
+  "solution": [
+    {
+      "gate": "H",
+      "target": 0
+    }
+  ]
+}

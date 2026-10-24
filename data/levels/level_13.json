@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "id": "L13",
+  "number": 13,
+  "chapter": "fundamentals",
+  "title": "Same odds, new state",
+  "qubits": 1,
+  "start_state": "0",
+  "available_gates": [
+    "H",
+    "X"
+  ],
+  "max_slots": 4,
+  "fixed_gates": [],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "kets": {
+        "0": 0.7071067811865476,
+        "1": -0.7071067811865476
+      }
+    }
+  },
+  "scoring": {
+    "two_star_gates": 3,
+    "three_star_gates": 2
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Make |−⟩ starting from |0⟩. The bars alone won't tell |+⟩ and |−⟩ apart."
+  },
+  "hints": [
+    "First reach |1⟩, then use H.",
+    "Try X then H."
+  ],
+  "why": "|+⟩ and |−⟩ give identical probabilities. The checker compares the full state, including the sign, so 50/50 bars are not enough.",
+  "success": "Correct sign, correct state.",
+  "solution": [
+    {
+      "gate": "X",
+      "target": 0
+    },
+    {
+      "gate": "H",
+      "target": 0
+    }
+  ]
+}

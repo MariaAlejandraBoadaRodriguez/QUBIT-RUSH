@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "id": "L05",
+  "number": 5,
+  "chapter": "fundamentals",
+  "title": "Count the flips",
+  "qubits": 1,
+  "start_state": "0",
+  "available_gates": [
+    "X",
+    "I"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [
+    {
+      "gate": "X",
+      "target": 0
+    },
+    {
+      "gate": "X",
+      "target": 0
+    },
+    {
+      "gate": "X",
+      "target": 0
+    }
+  ],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "label": "0"
+    }
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 1
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Three X gates are fixed in place. Where does the qubit end up? Make it |0⟩.",
+    "example": "X X X = X",
+    "action": "Count the flips, then add what is missing."
+  },
+  "hints": [
+    "An odd number of flips gives |1⟩."
+  ],
+  "why": "Each pair of X gates cancels, so three X gates act like one X. One more makes the total even.",
+  "success": "Even number of flips: back to |0⟩.",
+  "solution": [
+    {
+      "gate": "X",
+      "target": 0
+    }
+  ]
+}

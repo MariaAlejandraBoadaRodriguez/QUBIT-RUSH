@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "id": "L31",
+  "number": 31,
+  "chapter": "entanglement",
+  "title": "Opposite partners",
+  "qubits": 2,
+  "start_state": "00",
+  "available_gates": [
+    "H",
+    "CNOT",
+    "X"
+  ],
+  "max_slots": 4,
+  "fixed_gates": [],
+  "goal": {
+    "type": "bell_state",
+    "target": {
+      "bell": "psi_plus"
+    }
+  },
+  "scoring": {
+    "two_star_gates": 4,
+    "three_star_gates": 3
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Make (|01⟩ + |10⟩)/√2: always opposite results."
+  },
+  "hints": [
+    "Start from a Bell pair, then flip one qubit."
+  ],
+  "why": "Flipping one qubit of a Bell pair turns 'always agree' into 'always disagree'.",
+  "success": "Perfectly opposite.",
+  "solution": [
+    {
+      "gate": "H",
+      "target": 0
+    },
+    {
+      "gate": "CNOT",
+      "target": 1,
+      "control": 0
+    },
+    {
+      "gate": "X",
+      "target": 1
+    }
+  ]
+}

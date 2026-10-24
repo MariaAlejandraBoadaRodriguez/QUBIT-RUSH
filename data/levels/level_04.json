@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "id": "L04",
+  "number": 4,
+  "chapter": "fundamentals",
+  "title": "The identity",
+  "qubits": 1,
+  "start_state": "0",
+  "available_gates": [
+    "X",
+    "I"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "label": "1"
+    }
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 1
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "The I gate leaves a qubit unchanged. Reach |1⟩.",
+    "example": "I|0⟩ = |0⟩",
+    "action": "Only one of these gates changes anything."
+  },
+  "hints": [
+    "I is a placeholder. Which gate actually flips the qubit?"
+  ],
+  "why": "I (identity) is the 'do nothing' gate. It is useful to know that some steps change nothing.",
+  "success": "Only X was needed.",
+  "solution": [
+    {
+      "gate": "X",
+      "target": 0
+    }
+  ],
+  "new_gate": "I"
+}

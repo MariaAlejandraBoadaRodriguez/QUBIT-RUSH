@@ -4,11 +4,11 @@
 # Idempotent: safe to run at the start of every session.
 set -euo pipefail
 
-GODOT_VERSION="${GODOT_VERSION:-4.5.1}"          # Pin: confirm latest stable 4.x before Phase A and update here
+GODOT_VERSION="${GODOT_VERSION:-4.7.2}"          # Pinned: latest 4.x stable as of 2026-10-22 (see docs/DECISIONS.md)
 GODOT_TAG="${GODOT_VERSION}-stable"
 ANDROID_CMDLINE_ZIP="commandlinetools-linux-13114758_latest.zip"
 ANDROID_API="${ANDROID_API:-36}"
-BUILD_TOOLS="${BUILD_TOOLS:-36.0.0}"
+BUILD_TOOLS="${BUILD_TOOLS:-36.1.0}"   # matches Godot 4.7.2 Gradle template (config.gradle)
 
 export ANDROID_HOME="${ANDROID_HOME:-$HOME/android-sdk}"
 export ANDROID_SDK_ROOT="$ANDROID_HOME"
@@ -16,35 +16,44 @@ TOOLS_DIR="$HOME/tools"
 mkdir -p "$TOOLS_DIR" "$ANDROID_HOME"
 
 echo "==> System packages (JDK 17, unzip, curl)"
-if ! command -v javac >/dev/null 2>&1 || ! javac -version 2>&1 | grep -q " 17"; then
-  sudo apt-get update -y
-  sudo apt-get install -y --no-install-recommends openjdk-17-jdk-headless unzip curl ca-certificates
+# Godot's Android export targets JDK 17. Containers may ship a different default JDK
+# (e.g. 21) and a pre-set JAVA_HOME, so always resolve the JDK 17 directory explicitly.
+find_jdk17() { for d in /usr/lib/jvm/java-17-openjdk-* /usr/lib/jvm/temurin-17-*; do [ -x "$d/bin/javac" ] && { echo "$d"; return 0; }; done; return 0; }
+JDK17="$(find_jdk17)"
+if [ -z "$JDK17" ] || [ ! -x "$JDK17/bin/javac" ]; then
+  SUDO=""; [ "$(id -u)" -ne 0 ] && command -v sudo >/dev/null 2>&1 && SUDO="sudo"
+  $SUDO apt-get update -y
+  $SUDO apt-get install -y --no-install-recommends openjdk-17-jdk-headless unzip curl ca-certificates
+  JDK17="$(find_jdk17)"
 fi
-export JAVA_HOME="${JAVA_HOME:-$(dirname "$(dirname "$(readlink -f "$(command -v javac)")")")}"
+export JAVA_HOME="$JDK17"
+export PATH="$JAVA_HOME/bin:$PATH"
 
 echo "==> Godot ${GODOT_TAG}"
 GODOT_BIN="$TOOLS_DIR/godot"
 if [ ! -x "$GODOT_BIN" ] || ! "$GODOT_BIN" --version 2>/dev/null | grep -q "^${GODOT_VERSION}"; then
   BASE="https://github.com/godotengine/godot/releases/download/${GODOT_TAG}"
-  curl -fL --retry 3 -o /tmp/godot.zip "${BASE}/Godot_v${GODOT_TAG}_linux.x86_64.zip"
+  curl -fsSL --retry 3 -o /tmp/godot.zip "${BASE}/Godot_v${GODOT_TAG}_linux.x86_64.zip"
   unzip -o -q /tmp/godot.zip -d /tmp/godot
   mv "/tmp/godot/Godot_v${GODOT_TAG}_linux.x86_64" "$GODOT_BIN"
   chmod +x "$GODOT_BIN"
+  rm -rf /tmp/godot /tmp/godot.zip
 fi
 
 TEMPLATES_DIR="$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.stable"
 if [ ! -f "$TEMPLATES_DIR/android_source.zip" ]; then
   echo "==> Godot export templates"
-  curl -fL --retry 3 -o /tmp/templates.tpz \
+  curl -fsSL --retry 3 -o /tmp/templates.tpz \
     "https://github.com/godotengine/godot/releases/download/${GODOT_TAG}/Godot_v${GODOT_TAG}_export_templates.tpz"
   mkdir -p "$TEMPLATES_DIR"
   unzip -o -q /tmp/templates.tpz -d /tmp/templates
   cp -r /tmp/templates/templates/* "$TEMPLATES_DIR/"
+  rm -rf /tmp/templates /tmp/templates.tpz
 fi
 
 echo "==> Android SDK"
 if [ ! -x "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" ]; then
-  curl -fL --retry 3 -o /tmp/cmdline.zip "https://dl.google.com/android/repository/${ANDROID_CMDLINE_ZIP}"
+  curl -fsSL --retry 3 -o /tmp/cmdline.zip "https://dl.google.com/android/repository/${ANDROID_CMDLINE_ZIP}"
   unzip -o -q /tmp/cmdline.zip -d /tmp/cmdline
   mkdir -p "$ANDROID_HOME/cmdline-tools"
   rm -rf "$ANDROID_HOME/cmdline-tools/latest"

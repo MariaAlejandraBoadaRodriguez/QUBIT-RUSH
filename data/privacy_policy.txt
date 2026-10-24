@@ -1,0 +1,20 @@
+Qubit Rush privacy policy (draft, pending legal review)
+
+Playing Qubit Rush needs no account, email, phone number or internet connection.
+
+What stays on your device
+Your stars, unlocked levels, settings and daily challenge results are saved only on this device. They are never uploaded by Qubit Rush. You can erase them any time in Settings > Reset local progress, or by uninstalling the app.
+
+What we never collect
+No name, email, contacts, location, camera, microphone or date of birth. The game does not create profiles of players.
+
+Optional ads
+Ads are off unless you choose "Allow optional ads" in Ad choices. If you allow them, you may choose to watch a short ad for an extra hint. Ads never appear during puzzles, tutorials or timed challenges, and every level can be finished without them.
+When ads are allowed, Google's Mobile Ads SDK (AdMob) may process device information, such as an advertising identifier, IP address and diagnostic data, to deliver ads, limit how often they appear and prevent fraud. Qubit Rush requests family-safe, non-personalised ads. Google's own privacy policy applies: https://policies.google.com/privacy
+You can withdraw this choice at any time in Settings > Ad choices.
+
+Children
+Qubit Rush is designed to be understandable from age 10. The app does not knowingly collect personal information from children and runs ads only in a child-safe, non-personalised configuration.
+
+Contact
+[Owner to add a contact email and the published policy URL before release.]

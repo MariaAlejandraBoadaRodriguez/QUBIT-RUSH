@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "id": "L01",
+  "number": 1,
+  "chapter": "fundamentals",
+  "title": "Reach |1⟩",
+  "qubits": 1,
+  "start_state": "0",
+  "available_gates": [
+    "X"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "label": "1"
+    }
+  },
+  "scoring": {
+    "two_star_gates": 2,
+    "three_star_gates": 1
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "A qubit can be measured as 0 or 1. Reach |1⟩.",
+    "example": "X|0⟩ = |1⟩",
+    "action": "Tap X, then Run."
+  },
+  "hints": [
+    "X flips 0 to 1."
+  ],
+  "why": "The X gate swaps the amplitudes of |0⟩ and |1⟩, so a qubit that was surely 0 is now surely 1.",
+  "success": "You made |1⟩. Nice work.",
+  "solution": [
+    {
+      "gate": "X",
+      "target": 0
+    }
+  ],
+  "new_gate": "X"
+}

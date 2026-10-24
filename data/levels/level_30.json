@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "id": "L30",
+  "number": 30,
+  "chapter": "entanglement",
+  "title": "Bell pair",
+  "qubits": 2,
+  "start_state": "00",
+  "available_gates": [
+    "H",
+    "CNOT"
+  ],
+  "max_slots": 3,
+  "fixed_gates": [],
+  "goal": {
+    "type": "bell_state",
+    "target": {
+      "bell": "phi_plus"
+    }
+  },
+  "scoring": {
+    "two_star_gates": 3,
+    "three_star_gates": 2
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Two qubits can become linked in a way ordinary bits cannot. Make (|00⟩ + |11⟩)/√2.",
+    "example": "H on q0, then CNOT"
+  },
+  "hints": [
+    "Superposition on the control, then CNOT."
+  ],
+  "why": "This is a Bell pair. Each qubit alone is random, yet the two results always agree. That correlation is entanglement.",
+  "success": "You entangled two qubits.",
+  "solution": [
+    {
+      "gate": "H",
+      "target": 0
+    },
+    {
+      "gate": "CNOT",
+      "target": 1,
+      "control": 0
+    }
+  ]
+}

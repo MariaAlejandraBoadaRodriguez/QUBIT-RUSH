@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "id": "L20",
+  "number": 20,
+  "chapter": "fundamentals",
+  "title": "H–Z–H",
+  "qubits": 1,
+  "start_state": "0",
+  "available_gates": [
+    "Z",
+    "H"
+  ],
+  "max_slots": 4,
+  "fixed_gates": [],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "label": "1"
+    }
+  },
+  "scoring": {
+    "two_star_gates": 4,
+    "three_star_gates": 3
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Reach |1⟩ without an X gate.",
+    "example": "H Z H = X"
+  },
+  "hints": [
+    "Superposition, phase, then interference.",
+    "Try H, Z, H."
+  ],
+  "why": "H–Z–H acts exactly like X. Phase plus interference can do what a flip does.",
+  "success": "H–Z–H flipped it.",
+  "solution": [
+    {
+      "gate": "H",
+      "target": 0
+    },
+    {
+      "gate": "Z",
+      "target": 0
+    },
+    {
+      "gate": "H",
+      "target": 0
+    }
+  ]
+}

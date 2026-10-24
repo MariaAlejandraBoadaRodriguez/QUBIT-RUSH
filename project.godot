@@ -1,0 +1,61 @@
+; Engine configuration file.
+; Qubit Rush — pinned engine: Godot 4.7.2-stable (see README.md and docs/DECISIONS.md)
+
+config_version=5
+
+[application]
+
+config/name="Qubit Rush"
+config/description="Solve quantum puzzles, one gate at a time."
+config/version="0.1.0"
+run/main_scene="res://scenes/home/home.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/quit_on_go_back=false
+config/icon="res://assets/icons/icon.svg"
+boot_splash/bg_color=Color(0.98039216, 0.98039216, 0.972549, 1)
+boot_splash/show_image=false
+run/low_processor_mode=true
+
+[autoload]
+
+SaveService="*res://scripts/services/save_service.gd"
+AudioService="*res://scripts/services/audio_service.gd"
+ConsentService="*res://scripts/services/consent_service.gd"
+AdsService="*res://scripts/services/ads_service.gd"
+AnalyticsService="*res://scripts/services/analytics_service.gd"
+GameState="*res://scripts/game/game_state.gd"
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=1440
+window/size/window_width_override=405
+window/size/window_height_override=810
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/qubitrush_ads/plugin.cfg")
+
+[gui]
+
+theme/default_font_antialiasing=1
+common/drop_mouse_on_gui_input_disabled=true
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=false
+pointing/emulate_mouse_from_touch=true
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://data/i18n/strings.en.translation")
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.98039216, 0.98039216, 0.972549, 1)

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "id": "L40",
+  "number": 40,
+  "chapter": "algorithms",
+  "title": "Grand finale",
+  "qubits": 3,
+  "start_state": "000",
+  "available_gates": [
+    "H",
+    "S",
+    "CNOT"
+  ],
+  "max_slots": 6,
+  "fixed_gates": [],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "kets": {
+        "000": 0.7071067811865476,
+        "111": [
+          0,
+          0.7071067811865476
+        ]
+      }
+    }
+  },
+  "scoring": {
+    "two_star_gates": 5,
+    "three_star_gates": 4
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Make (|000⟩ + i|111⟩)/√2: entanglement with a quarter-turn phase."
+  },
+  "hints": [
+    "Phase on the first qubit spreads to the whole entangled state.",
+    "H and S on q0, then CNOTs down the line."
+  ],
+  "why": "Phases on a superposition travel with it through CNOTs. Getting this right needs superposition, phase and entanglement together.",
+  "success": "You combined everything.",
+  "solution": [
+    {
+      "gate": "H",
+      "target": 0
+    },
+    {
+      "gate": "S",
+      "target": 0
+    },
+    {
+      "gate": "CNOT",
+      "target": 1,
+      "control": 0
+    },
+    {
+      "gate": "CNOT",
+      "target": 2,
+      "control": 1
+    }
+  ]
+}

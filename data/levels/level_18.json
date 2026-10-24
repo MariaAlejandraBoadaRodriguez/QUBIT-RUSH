@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "L18",
+  "number": 18,
+  "chapter": "fundamentals",
+  "title": "Invisible change",
+  "qubits": 1,
+  "start_state": "0",
+  "available_gates": [
+    "Z",
+    "H"
+  ],
+  "max_slots": 4,
+  "fixed_gates": [],
+  "goal": {
+    "type": "state_fidelity",
+    "target": {
+      "kets": {
+        "0": 0.7071067811865476,
+        "1": -0.7071067811865476
+      }
+    }
+  },
+  "scoring": {
+    "two_star_gates": 3,
+    "three_star_gates": 2
+  },
+  "timer_seconds": null,
+  "tutorial": {
+    "text": "Make |−⟩ from |0⟩ using only H and Z."
+  },
+  "hints": [
+    "Make a superposition first, then change its phase."
+  ],
+  "why": "H then Z gives |−⟩. Z alone on |0⟩ would do nothing visible, because |0⟩ has no |1⟩ part to flip.",
+  "success": "Phase applied.",
+  "solution": [
+    {
+      "gate": "H",
+      "target": 0
+    },
+    {
+      "gate": "Z",
+      "target": 0
+    }
+  ]
+}

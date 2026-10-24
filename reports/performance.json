@@ -1,0 +1,21 @@
+{
+  "budgets": {
+    "load_all_levels_ms": 500.0,
+    "object_growth_after_session": 200,
+    "preview_refresh_ms": 2.0,
+    "simulate_3q_20_gates_ms": 2.0,
+    "solve_all_levels_ms": 20000.0,
+    "static_memory_growth_kb_second_300": 1024.0
+  },
+  "failures": [],
+  "ok": true,
+  "results": {
+    "load_all_levels_ms": 5.662,
+    "object_growth_after_session": 12.0,
+    "preview_refresh_ms": 0.052002,
+    "simulate_3q_20_gates_ms": 0.183245,
+    "solve_all_levels_ms": 30.333,
+    "static_memory_growth_kb_first_300": 1883.359375,
+    "static_memory_growth_kb_second_300": 957.77734375
+  }
+}

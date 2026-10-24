@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <!-- Registers the plugin with the Godot Android plugin v2 system. -->
+        <meta-data
+            android:name="org.godotengine.plugin.v2.QubitRushAds"
+            android:value="com.qubitrush.ads.QubitRushAdsPlugin" />
+    </application>
+</manifest>
